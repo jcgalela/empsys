@@ -1,9 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="EmpSys.Login" %>
 
-<%if (Session["Error"].ToString() != string.Empty)
-    {%>
-<p class="alert alert-danger text-center" id="successMessage">Invalid Input!</p>
-<% }%>
+
 
 
 <!DOCTYPE html>
@@ -27,6 +24,8 @@
         .auto-style3 {
             height: 19px;
             text-align: center;
+            border: thin;
+            border-color:black;
         }
 
         .topnav {
@@ -93,7 +92,7 @@
     </style>
 </head>
 <body>
-
+  
     <form id="form1" runat="server">
 
         <div class="topnav">
@@ -109,7 +108,11 @@
         </div>
         <div class="auto-style1">
             <br />
-            <br />
+                                      <%if (Session["Error"].ToString() != string.Empty)
+    {%>
+<p class="alert alert-danger text-center" id="successMessage">Username or Password is Incorrect!</p>
+<% }%>
+    
             &nbsp;<asp:Label ID="Label2" CssClass="username" runat="server" Text="Username"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
@@ -123,9 +126,11 @@
             <asp:HyperLink ID="ForgotPass" runat="server" ForeColor="#0066CC" NavigateUrl="ChangePassword.aspx">Forgot Password? </asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
+
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="LoginButton" CssClass="Login" runat="server" Height="25px" Text="Log in" Width="86px" BackColor="#208FFF" BorderStyle="None" ForeColor="White" OnClick="LoginButton_Click"></asp:Button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
            
         </div>
     </form>
