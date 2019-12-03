@@ -149,19 +149,19 @@
                         <tr>
                             <td class="auto-style9">CURRENT PASSWORD:</td>
                             <td class="auto-style4">
-                                <asp:TextBox ID="currentPassText" runat="server" BorderColor="White" Width="224px"></asp:TextBox>
+                                <asp:TextBox ID="currentPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style7">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                             <td class="auto-style8">
-                                <asp:TextBox ID="newPassText" runat="server" BorderColor="White" Width="224px"></asp:TextBox>
+                                <asp:TextBox ID="newPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONFIRM NEW PASSWORD:</td>
                             <td class="auto-style4">
-                                <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="White" Width="224px"></asp:TextBox>
+                                <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
                             </td>
                         </tr>
                     </table>
