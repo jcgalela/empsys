@@ -18,7 +18,7 @@
             text-align: left;
             margin-top: 27px;
         }
-
+       
         .auto-style2 {
             margin: auto;
             border: 2px solid;
