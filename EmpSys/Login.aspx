@@ -7,7 +7,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Employee Registration</title>
+    <title>Employee Registration Sytem</title>
      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
@@ -46,8 +46,8 @@
             }
 
                 .topnav a:hover {
-                    background-color: #ddd;
-                    color: black;
+                    background-color: #1976d2;
+                    color: white;
                 }
 
                 .topnav a.active {
@@ -94,12 +94,10 @@
 <body>
   
     <form id="form1" runat="server">
-
+        
         <div class="topnav">
-            <div class="topnav-right">
-                <a href="#Changepass">Change Password</a>
-                <a href="#Logout">Logout</a>
-                <a>Welcome, "Lebron"</a>
+            <a>Employee Registration System</a>
+            <div class="topnav-right">          
             </div>
         </div>
 
