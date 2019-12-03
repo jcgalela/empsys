@@ -43,10 +43,9 @@
         }
 
         .col-sm-6 {
-           
         }
-         .col-sm-4 {
-            
+
+        .col-sm-4 {
         }
 
         .auto-style2 {
@@ -58,8 +57,9 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+
         .Details {
-        color:  dodgerblue;
+            color: dodgerblue;
         }
     </style>
 </head>
@@ -88,39 +88,43 @@
             <div class="row content">
                 <div class="col-sm-6">
                     <h2 class="Details">Employee Information</h2>
+                    <br />
                     <ul>
 
-                        <h4>Employee Status:
+                        <h4><b>Employee Status:
                             <asp:DropDownList ID="DropDownList2" runat="server">
                                 <asp:ListItem>Regular</asp:ListItem>
                                 <asp:ListItem>Trainee</asp:ListItem>
                             </asp:DropDownList></h4>
-                        <h4>Employee Id:
+                        <h4><b>Employee Id:
                             <asp:TextBox ID="empIdText" runat="server"></asp:TextBox></h4>
-                        
-                        <h4>SSS Number:
+
+                        <h4><b>SSS Number:
                             <asp:TextBox ID="sssText" runat="server"></asp:TextBox></h4>
-                    
-                        <h4>TIN Number:
+
+                        <h4><b>TIN Number:
                             <asp:TextBox ID="tinText" runat="server"></asp:TextBox></h4>
-                       
-                        <h4>Date Employed:
+
+                        <h4><b>Date Employed:
                             <asp:TextBox ID="dateEmployedText" runat="server"></asp:TextBox></h4>
-                        
-                        <h4>Effective Date:</h4>
-                        <h4>From:<asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox></h4>
-                      
 
-                        <h4>To:<asp:TextBox ID="TextBox1" runat="server" ReadOnly="True"></asp:TextBox></h4>
-                      
-                        <h4>Signature:</h4><asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/signatue.PNG" />
+                        <h4><b>Effective Date:</h4>
+                        <h4><b>From:<asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox></h4>
 
-                        
+
+                        <h4><b>To:<asp:TextBox ID="TextBox1" runat="server" ReadOnly="True"></asp:TextBox></h4>
+
+                        <h4><b>Signature:</h4>
+                        <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/signatue.PNG" />
+
+
                     </ul>
                     <br>
 
                     <div class="input-group">
-                       <span> <br></span>
+                        <span>
+                            <br>
+                        </span>
                     </div>
                 </div>
 
@@ -130,6 +134,7 @@
 
                         <div class="col-sm-6">
                             <h2 class="Details">Contact Details</h2>
+                            <br />
                             <ul>
                                 <h4>Image: &nbsp;<br>
                                     <br>
@@ -144,17 +149,20 @@
                                     <asp:ListItem>Mrs.</asp:ListItem>
                                     <asp:ListItem>Extra Mrs.</asp:ListItem>
                                 </asp:DropDownList>
-                                <h4>First Name:<asp:TextBox ID="firstNameText" runat="server"></asp:TextBox></h4>
-                                <h4>Middle Name:<asp:TextBox ID="middleNameText" runat="server"></asp:TextBox></h4>
-                                <h4>Last Name:<asp:TextBox ID="lastNameText" runat="server"></asp:TextBox></h4>
-                                <h4>Date of Birth:<asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
-                                    <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png"/>
+                                <h4><b>First Name:<asp:TextBox ID="firstNameText" runat="server"></asp:TextBox></h4>
+                                <h4><b>Middle Name:<asp:TextBox ID="middleNameText" runat="server"></asp:TextBox></h4>
+                                <h4><b>Last Name:<asp:TextBox ID="lastNameText" runat="server"></asp:TextBox></h4>
+                                <h4><b>Date of Birth:<asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
+                                    <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" />
                                     <asp:Calendar ID="birthdayCalendar" runat="server" Visible="False"></asp:Calendar>
-                                    <h4>In case of emergency, please notify,</h4>
-                                    <h4>Name:<asp:TextBox ID="emergencyName" runat="server"></asp:TextBox></h4>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <h4><b>In case of emergency, please notify,</h4>
+                                    <h4><b>Name:<asp:TextBox ID="emergencyName" runat="server"></asp:TextBox></h4>
 
-                                    <h4>Address:<asp:TextBox ID="emergencyAddress" runat="server"></asp:TextBox></h4>
-                                    <h4>Contact No:<asp:TextBox ID="emergencyContact" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Address:<asp:TextBox ID="emergencyAddress" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Contact No:<asp:TextBox ID="emergencyContact" runat="server"></asp:TextBox></h4>
                             </ul>
                             <br>
                         </div>
@@ -162,17 +170,16 @@
 
                     <div class="container-fluid">
                         <div class="row content">
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <h2 class="Details">Login Information</h2>
+                                <br />
                                 <ul>
-                                    <h4>UserName:<asp:TextBox ID="userNameText" runat="server"></asp:TextBox></h4>
-                                    <h4>Email:
-                                        <asp:TextBox ID="emailText" runat="server"></asp:TextBox></h4>
-                                    <h4>Confirm Email:
+                                    <h4><b>UserName:<asp:TextBox ID="userNameText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Email:<asp:TextBox ID="emailText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Confirm Email:
                                         <asp:TextBox ID="confirmEmailText" runat="server"></asp:TextBox></h4>
-                                    <h4>Password:
-                                        <asp:TextBox ID="passwordText" runat="server"></asp:TextBox></h4>
-                                    <h4>Confirm Password:<asp:TextBox ID="confirmPassText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Password:<asp:TextBox ID="passwordText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Confirm Password:<asp:TextBox ID="confirmPassText" runat="server"></asp:TextBox></h4>
                                 </ul>
 
                                 <br>
@@ -197,7 +204,7 @@
     <footer class="container-fluid">
 
         <center>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</center>
-        
+
     </footer>
 
 </body>
