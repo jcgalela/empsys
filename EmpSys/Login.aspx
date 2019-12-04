@@ -19,6 +19,8 @@
             height: 327px;
             text-align: center;
             margin-top: 27px;
+             font-family: Verdana, Geneva, sans-serif;
+            font-size: 15px;
         }
 
 
@@ -79,20 +81,24 @@
             border-bottom-left-radius: 5px 5px;
             border-top-right-radius: 5px 5px;
             font-family: Verdana, Geneva, sans-serif;
+            font-size: 20px;
         }
 
         .username {
             font-family: Verdana, Geneva, sans-serif;
-            font-size: 14px;
-            font-size: 14px;
+            font-size: 20px;
             font-weight: bold;
         }
 
         .password {
             font-family: Verdana, Geneva, sans-serif;
-            font-size: 14px;
-            font-size: 14px;
+            font-size: 20px;
             font-weight: bold;
+        }
+
+        .forgot {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -116,22 +122,22 @@
             <p class="alert alert-danger text-center" id="successMessage">Username or Password is Incorrect!</p>
             <% }%>
     
-            &nbsp;<asp:Label ID="Label2" CssClass="username" runat="server" Text="Username" ValidateRequestMode="Enabled" ></asp:Label>
+            &nbsp;<asp:Label ID="Label2" CssClass="username" runat="server" Text="Username" ValidateRequestMode="Enabled"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-            <asp:TextBox ID="UsernameTextBox" placeholder="Enter username" runat="server" Height="21px" Width="264px"></asp:TextBox>
+            <asp:TextBox ID="UsernameTextBox" placeholder="Enter username" runat="server" Height="33px" Width="304px"></asp:TextBox>
             <br />
             &nbsp;<asp:Label ID="Label1" CssClass="password" runat="server" Text="Password"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-            <asp:TextBox ID="PassTextBox" placeholder="Enter password" runat="server" Height="21px" Width="264px" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="PassTextBox" placeholder="Enter password" runat="server" Height="35px" Width="302px" TextMode="Password"></asp:TextBox>
             <br />
-            <asp:HyperLink ID="ForgotPass" runat="server" ForeColor="#0066CC" NavigateUrl="ForgotPass.aspx">Forgot Password? </asp:HyperLink>
+            <asp:HyperLink ID="ForgotPass" CssClass="forgot" runat="server" ForeColor="#0066CC" NavigateUrl="ForgotPass.aspx">Forgot Password? </asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="LoginButton" CssClass="Login" runat="server" Height="25px" Text="Log in" Width="86px" BackColor="#208FFF" BorderStyle="None" ForeColor="White" OnClick="LoginButton_Click"></asp:Button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="LoginButton" CssClass="Login" runat="server" Height="37px" Text="Log in" Width="117px" BackColor="#208FFF" BorderStyle="None" ForeColor="White" OnClick="LoginButton_Click"></asp:Button>
+            &nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      
            
@@ -140,7 +146,7 @@
 
     <p>
     </p>
-   
+
 
     <footer class="container-fluid">
 

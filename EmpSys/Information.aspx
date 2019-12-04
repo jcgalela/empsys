@@ -30,8 +30,8 @@
             }
 
                 .topnav a:hover {
-                    background-color: #ddd;
-                    color: black;
+                    background-color: #1976d2;
+                    color: white;
                 }
 
                 .topnav a.active {
