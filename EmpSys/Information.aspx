@@ -109,15 +109,16 @@
                             <asp:TextBox ID="dateEmployedText" runat="server"></asp:TextBox></h4>
 
                         <h4><b>Effective Date:</h4>
-                        <h4><b>From:<asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox></h4>
+                        <h4><b>From:<asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox>
+                            <asp:ImageButton ID="fromButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="fromButton_Click" />
+                            <asp:Calendar ID="fromCalendar" runat="server" Visible="False" OnSelectionChanged="fromCalendar_SelectionChanged" ></asp:Calendar></h4>
 
+                            <h4><b>To:<asp:TextBox ID="toText" runat="server" ReadOnly="True"></asp:TextBox>
+                            <asp:ImageButton ID="toButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="toButton_Click" />
+                            <asp:Calendar ID="toCalendar" runat="server" Visible="False" OnSelectionChanged="toCalendar_SelectionChanged"></asp:Calendar></h4>
 
-                        <h4><b>To:<asp:TextBox ID="TextBox1" runat="server" ReadOnly="True"></asp:TextBox></h4>
-
-                        <h4><b>Signature:</h4>
-                        <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/signatue.PNG" />
-
-
+                            <h4><b>Signature:</h4>
+                            <asp:ImageButton ID="uploadSignature" runat="server" Height="50px" ImageUrl="~/signatue.PNG" />
                     </ul>
                     <br>
 
@@ -138,7 +139,7 @@
                             <ul>
                                 <h4>Image: &nbsp;<br>
                                     <br>
-                                    <asp:ImageButton ID="ImageButton1" runat="server" Height="200px" ImageUrl="~/upload.PNG" />
+                                    <asp:ImageButton ID="uploadImage" runat="server" Height="200px" ImageUrl="~/upload.PNG" />
 
                                 </h4>
 
@@ -147,17 +148,16 @@
                                     <asp:ListItem>Mr.</asp:ListItem>
                                     <asp:ListItem>Ms.</asp:ListItem>
                                     <asp:ListItem>Mrs.</asp:ListItem>
-                                    <asp:ListItem>Extra Mrs.</asp:ListItem>
                                 </asp:DropDownList>
                                 <h4><b>First Name:<asp:TextBox ID="firstNameText" runat="server"></asp:TextBox></h4>
                                 <h4><b>Middle Name:<asp:TextBox ID="middleNameText" runat="server"></asp:TextBox></h4>
                                 <h4><b>Last Name:<asp:TextBox ID="lastNameText" runat="server"></asp:TextBox></h4>
                                 <h4><b>Date of Birth:<asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
-                                    <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" />
-                                    <asp:Calendar ID="birthdayCalendar" runat="server" Visible="False"></asp:Calendar>
-                                    <br/>
-                                    <br/>
-                                    <br/>
+                                    <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="birthdayButton_Click" />
+                                    <asp:Calendar ID="birthdayCalendar" runat="server" Visible="False" OnSelectionChanged="birthdayCalendar_SelectionChanged"></asp:Calendar>
+                                    <br />
+                                    <br />
+                                    <br />
                                     <h4><b>In case of emergency, please notify,</h4>
                                     <h4><b>Name:<asp:TextBox ID="emergencyName" runat="server"></asp:TextBox></h4>
 

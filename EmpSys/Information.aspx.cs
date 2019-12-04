@@ -16,7 +16,7 @@ namespace EmpSys
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void createButton_Click(object sender, EventArgs e)
         {
             string drop = DropDownList2.SelectedValue;
             string id = empIdText.Text;
@@ -24,7 +24,7 @@ namespace EmpSys
             string tin = tinText.Text;
             string dateEmp = dateEmployedText.Text;
             string from = fromText.Text;
-            string to = TextBox1.Text;
+            string to = toText.Text;
             ///*Image signature = ImageButton2.Visible*/;
             string fName = firstNameText.Text;
             string MName = middleNameText.Text;
@@ -57,5 +57,58 @@ namespace EmpSys
             cnn.Close();
 
         }
+        protected void fromButton_Click(object sender, ImageClickEventArgs e)
+        {
+            if (fromCalendar.Visible == false)
+            {
+                fromCalendar.Visible = true;
+            }
+            else if (fromCalendar.Visible == true)
+            {
+                fromCalendar.Visible = false;
+            }
+        }
+        protected void toButton_Click(object sender, ImageClickEventArgs e)
+        {
+            if (toCalendar.Visible == false)
+            {
+                toCalendar.Visible = true;
+            }
+            else if (toCalendar.Visible == true)
+            {
+                toCalendar.Visible = false;
+            }
+        }
+        protected void birthdayButton_Click(object sender, ImageClickEventArgs e)
+        {
+            if (birthdayCalendar.Visible == false)
+            {
+                birthdayCalendar.Visible = true;
+            }
+            else if (birthdayCalendar.Visible == true)
+            {
+                birthdayCalendar.Visible = false;
+            }
+        }
+        protected void fromCalendar_SelectionChanged(object sender, EventArgs e)
+        {
+            fromText.Text = fromCalendar.SelectedDate.ToString("MM/dd/yyyy");
+            fromCalendar.Visible = false;
+            fromButton.Visible = true;
+        }
+        protected void toCalendar_SelectionChanged(object sender, EventArgs e)
+        {
+            toText.Text = toCalendar.SelectedDate.ToString("MM/dd/yyyy");
+            toCalendar.Visible = false;
+            toButton.Visible = true;
+        }
+        protected void birthdayCalendar_SelectionChanged(object sender, EventArgs e)
+        {
+            birthdayText.Text = birthdayCalendar.SelectedDate.ToString("MM/dd/yyyy");
+            birthdayCalendar.Visible = false;
+            birthdayButton.Visible = true;
+        }
+
+
     }
 }
