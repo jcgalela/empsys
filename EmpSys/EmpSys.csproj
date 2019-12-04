@@ -139,6 +139,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Employee.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Maintenance.aspx" />
     <Content Include="Model\Employee.edmx.diagram">
       <DependentUpon>Employee.edmx</DependentUpon>
     </Content>
@@ -246,6 +247,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance.aspx.cs">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance.aspx.designer.cs">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Employee.Context.cs">
       <AutoGen>True</AutoGen>
