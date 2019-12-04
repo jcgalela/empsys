@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -34,28 +35,77 @@ namespace EmpSys
             string contact = emergencyContact.Text;
             string address = emergencyAddress.Text;
 
-            string connectionString;
-            SqlConnection cnn;
+            //string connectionString;
+            //SqlConnection cnn;
 
-            connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
+            //connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
 
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
+            //cnn = new SqlConnection(connectionString);
+            //cnn.Open();
 
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            String sql = "";
+            //SqlCommand command;
+            //SqlDataAdapter adapter = new SqlDataAdapter();
+            //String sql = "";
 
-            sql = "Insert into Employee(employeeStatus,employeeId,firstName,middleName,lastName,birthday,emergencyName,emergencyAddress," +
-                "emergencyContact,sssnum,tinnum,dateEmployed,dateFrom,dateTo,signature,userName,email,password,image)" +
-                "Values(drop,id,sss,tin,dateEmp,from,to,fName,MName,lName,bdate,name,contact,address)";
-            command = new SqlCommand(sql, cnn);
-            adapter.InsertCommand = new SqlCommand(sql, cnn);
-            adapter.InsertCommand.ExecuteNonQuery();
+            //sql = "Insert into Employee(employeeStatus,employeeId,firstName,middleName,lastName,birthday,emergencyName,emergencyAddress," +
+            //    "emergencyContact,sssnum,tinnum,dateEmployed,dateFrom,dateTo,signature,userName,email,password,image)" +
+            //    "Values(drop,id,sss,tin,dateEmp,from,to,fName,MName,lName,bdate,name,contact,address)";
+            //command = new SqlCommand(sql, cnn);
+            //adapter.InsertCommand = new SqlCommand(sql, cnn);
+            //adapter.InsertCommand.ExecuteNonQuery();
 
-            command.Dispose();
-            cnn.Close();
+            //command.Dispose();
+            //cnn.Close();
 
+            //try
+            //{
+            //    SqlConnection conn = new SqlConnection(@"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2");
+            //    string insert_query = "insert into Employee (employeeId,firstName,middleName,lastName) values (@employeeId ,@firstName ,@middleName ,@lastName)";
+            //    SqlCommand cmd = new SqlCommand(insert_query, conn);
+            //    cmd.Parameters.AddWithValue("@employeeId", id);
+            //    cmd.Parameters.AddWithValue("@firstName", fName);
+            //    cmd.Parameters.AddWithValue("@middleName", MName);
+            //    cmd.Parameters.AddWithValue("@lastName", lName);
+
+            //    cmd.ExecuteNonQuery();
+            //    Response.Redirect("Login.aspx");
+            //    Response.Write("Registration Is Successfull");
+            //    conn.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    Response.Write("ERORR:" + ex.ToString());
+
+            //}
+
+            SqlConnection con = new SqlConnection(@"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2");
+            SqlCommand cmd = new SqlCommand("sp_insert", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@employeeId", textBox1.Text);
+            cmd.Parameters.AddWithValue("@firstName", textBox2.Text);
+            cmd.Parameters.AddWithValue("@middleName", textBox3.Text);
+            cmd.Parameters.AddWithValue("@lastName", textBox4.Text);
+            cmd.Parameters.AddWithValue("@birthday", textBox4.Text);
+            cmd.Parameters.AddWithValue("@emergencyName", textBox4.Text);
+            cmd.Parameters.AddWithValue("@emergencyAddress", textBox4.Text);
+            cmd.Parameters.AddWithValue("@emergencyContact", textBox4.Text);
+            cmd.Parameters.AddWithValue("@employeeStatus", textBox4.Text);
+            cmd.Parameters.AddWithValue("@sssnum", textBox4.Text);
+            cmd.Parameters.AddWithValue("@tinnum", textBox4.Text);
+            cmd.Parameters.AddWithValue("@dateEmployed", textBox4.Text);
+            cmd.Parameters.AddWithValue("@dateFrom", textBox4.Text);
+            cmd.Parameters.AddWithValue("@dateTo", textBox4.Text);
+
+
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            if (i != 0)
+            {
+                MessageBox.Show(i + "Data Saved");
+            }
         }
         protected void fromButton_Click(object sender, ImageClickEventArgs e)
         {
@@ -111,4 +161,6 @@ namespace EmpSys
 
 
     }
+
 }
+    
