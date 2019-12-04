@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="EmpSys.ChangePassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPass.aspx.cs" Inherits="EmpSys.ForgotPass" %>
 
 <!DOCTYPE html>
 
@@ -150,12 +150,6 @@
             &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
                 <br />
                 <table cellspacing="3" class="auto-style3">
-                    <tr>
-                        <td class="auto-style9">CURRENT PASSWORD:&nbsp;</td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="currentPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
-                        </td>
-                    </tr>
                     <tr>
                         <td class="auto-style9">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <td class="auto-style4">

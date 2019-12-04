@@ -11,7 +11,7 @@ namespace EmpSys
 {
 
 
-    public partial class ChangePassword
+    public partial class ForgotPass
     {
 
         /// <summary>
@@ -49,15 +49,6 @@ namespace EmpSys
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-
-        /// <summary>
-        /// currentPassText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox currentPassText;
 
         /// <summary>
         /// newPassText control.
