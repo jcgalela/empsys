@@ -174,28 +174,25 @@
                     <tr>
                         <td>
                             <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" OnClick="changePasswordButton_Click" />
+                            <br />
+                            <asp:Label ID="lblmsg" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                 </table>
             </asp:Panel>
         </div>
+    <p>
+        &nbsp;
+    </p>
+    <p>
+        &nbsp;
+    </p>
     </form>
-    <p>
-        &nbsp;
-    </p>
-    <p>
-        &nbsp;
-    </p>
     <br />
 
     <footer class="container-fluid">
 
-       <p>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</p>
-
-    </footer>
-
-</body>
-</html>
+       <p>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.html>
 
 
 

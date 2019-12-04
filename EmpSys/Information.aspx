@@ -81,7 +81,7 @@
     <div class="topnav">
         <a>Employee Registration</a>
         <div class="topnav-right">
-            <a href="#Changepass">Change Password</a>
+            <asp:HyperLink ID="Changepass" runat="server" NavigateUrl="ChangePassword.aspx">Change Password</asp:HyperLink>
             <a href="#Logout">Logout</a>
             <a>Welcome, "Lebron"</a>
         </div>

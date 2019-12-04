@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EmpSys
+namespace EmpSysLibrary
 {
-    public partial class ForgotPass : System.Web.UI.Page
+    class Changepassword
     {
-        protected void Page_Load(object sender, EventArgs e)
+
+        public static void ChangePass()
         {
+
+
             string connectionString;
             SqlConnection cnn;
 
@@ -19,20 +21,21 @@ namespace EmpSys
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
+
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
             String sql = "";
 
-            sql = "Update Employee set password='"+ newPassText.Text+"' where employeeId ='"+ empIdText.Text +"'";
+            sql = "Update demotb set password='"+ newPassText.Text+"' where  ='"+  +"'";
 
 
-        command = new SqlCommand(sql, cnn);
+            command = new SqlCommand(sql, cnn);
 
             adapter.InsertCommand = new SqlCommand(sql, cnn);
             adapter.InsertCommand.ExecuteNonQuery();
 
             command.Dispose();
-		cnn.Close();
+            cnn.Close();
         }
     }
 }

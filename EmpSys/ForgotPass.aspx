@@ -63,16 +63,6 @@
             border-color: white;
         }
 
-        .auto-style7 {
-            height: 27px;
-            text-align: center;
-        }
-
-        .auto-style8 {
-            width: 234px;
-            height: 27px;
-        }
-
         .Panel1 {
             border-color: black;
             border-radius: 25px;
@@ -127,6 +117,10 @@
             color: black;
             text-align: center;
         }
+        .auto-style10 {
+            text-align: left;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -150,6 +144,12 @@
             &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
                 <br />
                 <table cellspacing="3" class="auto-style3">
+                    <tr>
+                        <td class="auto-style10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EMPLOYEE ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                        <td class="auto-style4">
+                            <asp:TextBox ID="empIdText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                        </td>
+                    </tr>
                     <tr>
                         <td class="auto-style9">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <td class="auto-style4">
