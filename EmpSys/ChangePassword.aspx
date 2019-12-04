@@ -63,24 +63,9 @@
             border-color: white;
         }
 
-        .auto-style7 {
-            height: 27px;
-            text-align: center;
-        }
-
-        .auto-style8 {
-            width: 234px;
-            height: 27px;
-        }
-
         .Panel1 {
             border-color: black;
             border-radius: 25px;
-        }
-
-        .auto-style9 {
-            text-align: center;
-            font-weight: bold;
         }
 
         .topnav {
@@ -127,6 +112,21 @@
             color: black;
             text-align: center;
         }
+        .auto-style11 {
+            text-align: center;
+            font-weight: bold;
+            width: 197px;
+            height: 34px;
+        }
+        .auto-style12 {
+            width: 234px;
+            height: 34px;
+        }
+        .auto-style16 {
+            text-align: center;
+            font-weight: bold;
+            width: 197px;
+        }
     </style>
 </head>
 <body>
@@ -149,23 +149,23 @@
             </span></strong>
             &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
                 <br />
-                <table cellspacing="3" class="auto-style3">
+                <table cellspacing="3" class="auto-style3" style="text-align:center">
                     <tr>
-                        <td class="auto-style9">CURRENT PASSWORD:&nbsp;</td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="currentPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                        <td class="auto-style11">CURRENT PASSWORD:&nbsp;</td>
+                        <td class="auto-style12">
+                            <asp:TextBox ID="currentPassText" runat="server" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style9">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                        <td class="auto-style16">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <td class="auto-style4">
-                            <asp:TextBox ID="newPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="newPassText" runat="server" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONFIRM NEW PASSWORD:</td>
+                        <td class="auto-style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONFIRM NEW PASSWORD:</td>
                         <td class="auto-style4">
-                            <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -173,7 +173,7 @@
                 <table cellspacing="3" class="auto-style5" style="text-align: center">
                     <tr>
                         <td>
-                            <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" />
+                            <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" OnClick="changePasswordButton_Click" />
                         </td>
                     </tr>
                 </table>

@@ -13,5 +13,10 @@ namespace EmpSys
         {
 
         }
+
+        protected void changePasswordButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
