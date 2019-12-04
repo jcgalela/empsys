@@ -186,7 +186,7 @@
 
      <footer class="container-fluid">
 
-        <center>TAGINA HASDHSADHSADHSDAH The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</center>
+        <center>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</center>
         
     </footer>
 
