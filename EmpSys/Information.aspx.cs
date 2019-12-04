@@ -35,6 +35,9 @@ namespace EmpSys
             string name = emergencyName.Text;
             string contact = emergencyContact.Text;
             string address = emergencyAddress.Text;
+            string Uname = userNameText.Text;
+            string email = emailText.Text;
+            string password = passwordText.Text;
 
             //string connectionString;
             //SqlConnection cnn;
@@ -82,20 +85,23 @@ namespace EmpSys
             SqlConnection con = new SqlConnection(@"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2");
             SqlCommand cmd = new SqlCommand("sp_insert", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@employeeId", textBox1.Text);
-            cmd.Parameters.AddWithValue("@firstName", textBox2.Text);
-            cmd.Parameters.AddWithValue("@middleName", textBox3.Text);
-            cmd.Parameters.AddWithValue("@lastName", textBox4.Text);
-            cmd.Parameters.AddWithValue("@birthday", textBox4.Text);
-            cmd.Parameters.AddWithValue("@emergencyName", textBox4.Text);
-            cmd.Parameters.AddWithValue("@emergencyAddress", textBox4.Text);
-            cmd.Parameters.AddWithValue("@emergencyContact", textBox4.Text);
-            cmd.Parameters.AddWithValue("@employeeStatus", textBox4.Text);
-            cmd.Parameters.AddWithValue("@sssnum", textBox4.Text);
-            cmd.Parameters.AddWithValue("@tinnum", textBox4.Text);
-            cmd.Parameters.AddWithValue("@dateEmployed", textBox4.Text);
-            cmd.Parameters.AddWithValue("@dateFrom", textBox4.Text);
-            cmd.Parameters.AddWithValue("@dateTo", textBox4.Text);
+            cmd.Parameters.AddWithValue("@employeeStatus", drop);
+            cmd.Parameters.AddWithValue("@employeeId", id);
+            cmd.Parameters.AddWithValue("@firstName", fName);
+            cmd.Parameters.AddWithValue("@middleName", MName);
+            cmd.Parameters.AddWithValue("@lastName", lName);
+            cmd.Parameters.AddWithValue("@birthday", bdate);
+            cmd.Parameters.AddWithValue("@emergencyName", name);
+            cmd.Parameters.AddWithValue("@emergencyAddress", address);
+            cmd.Parameters.AddWithValue("@emergencyContact", contact);
+            cmd.Parameters.AddWithValue("@sssnum", sss);
+            cmd.Parameters.AddWithValue("@tinnum", tin);
+            cmd.Parameters.AddWithValue("@dateEmployed", dateEmp);
+            cmd.Parameters.AddWithValue("@dateFrom", from);
+            cmd.Parameters.AddWithValue("@dateTo", to);
+            cmd.Parameters.AddWithValue("@userName", Uname);
+            cmd.Parameters.AddWithValue("@email",email);
+            cmd.Parameters.AddWithValue("@password", password);
 
 
             con.Open();
