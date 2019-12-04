@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,20 +19,21 @@ namespace EmpSys
 
         }
 
-        protected void createButton_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
+            CultureInfo provider = CultureInfo.InvariantCulture;
             string drop = DropDownList2.SelectedValue;
             string id = empIdText.Text;
             string sss = sssText.Text;
             string tin = tinText.Text;
-            string dateEmp = dateEmployedText.Text;
-            string from = fromText.Text;
-            string to = toText.Text;
+            DateTime dateEmp = DateTime.ParseExact(dateEmployedText.Text, "d", provider);
+            DateTime from = DateTime.ParseExact(fromText.Text, "d", provider);
+            DateTime to = DateTime.ParseExact(toText.Text, "d", provider);
             ///*Image signature = ImageButton2.Visible*/;
             string fName = firstNameText.Text;
             string MName = middleNameText.Text;
             string lName = lastNameText.Text;
-            string bdate = birthdayText.Text;
+            DateTime bdate = DateTime.ParseExact(birthdayText.Text, "d", provider);
             string name = emergencyName.Text;
             string contact = emergencyContact.Text;
             string address = emergencyAddress.Text;
@@ -39,80 +41,46 @@ namespace EmpSys
             string email = emailText.Text;
             string password = passwordText.Text;
 
-            //string connectionString;
-            //SqlConnection cnn;
+            string connectionString;
+            SqlConnection cnn;
 
-            //connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
+            connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
 
-            //cnn = new SqlConnection(connectionString);
-            //cnn.Open();
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
 
-            //SqlCommand command;
-            //SqlDataAdapter adapter = new SqlDataAdapter();
-            //String sql = "";
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "";
 
-            //sql = "Insert into Employee(employeeStatus,employeeId,firstName,middleName,lastName,birthday,emergencyName,emergencyAddress," +
-            //    "emergencyContact,sssnum,tinnum,dateEmployed,dateFrom,dateTo,signature,userName,email,password,image)" +
-            //    "Values(drop,id,sss,tin,dateEmp,from,to,fName,MName,lName,bdate,name,contact,address)";
-            //command = new SqlCommand(sql, cnn);
-            //adapter.InsertCommand = new SqlCommand(sql, cnn);
-            //adapter.InsertCommand.ExecuteNonQuery();
+            sql = "Insert into Employee(employeeId," +
+                "employeeStatus," +
+                "firstName," +
+                "middleName," +
+                "lastName," +
+                "birthday," +
+                "emergencyName," +
+                "emergencyAddress," +
+                "emergencyContact," +
+                "sssnum," +
+                "tinnum," +
+                "dateEmployed," +
+                "dateFrom," +
+                "dateTo," +
+                "userName," +
+                "email," +
+                "password" +
+                ") " +
+                "values ( '" + id + "','" + drop + "','" + fName + "','" + MName + "','" + lName + "'," +
+                "'" + bdate + "','" + name + "','" + address + "','" + contact + "','" + sss + "'," +
+                "'" + tin + "','" + dateEmp + "','" + to + "','" + from + "','" + Uname + "','" + email + "','" + password + "')";
+            command = new SqlCommand(sql, cnn);
+            adapter.InsertCommand = new SqlCommand(sql, cnn);
+            adapter.InsertCommand.ExecuteNonQuery();
 
-            //command.Dispose();
-            //cnn.Close();
+            command.Dispose();
+            cnn.Close();
 
-            //try
-            //{
-            //    SqlConnection conn = new SqlConnection(@"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2");
-            //    string insert_query = "insert into Employee (employeeId,firstName,middleName,lastName) values (@employeeId ,@firstName ,@middleName ,@lastName)";
-            //    SqlCommand cmd = new SqlCommand(insert_query, conn);
-            //    cmd.Parameters.AddWithValue("@employeeId", id);
-            //    cmd.Parameters.AddWithValue("@firstName", fName);
-            //    cmd.Parameters.AddWithValue("@middleName", MName);
-            //    cmd.Parameters.AddWithValue("@lastName", lName);
-
-            //    cmd.ExecuteNonQuery();
-            //    Response.Redirect("Login.aspx");
-            //    Response.Write("Registration Is Successfull");
-            //    conn.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Response.Write("ERORR:" + ex.ToString());
-
-            //}
-
-            SqlConnection con = new SqlConnection(@"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2");
-            SqlCommand cmd = new SqlCommand("sp_insert", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@employeeStatus", drop);
-            cmd.Parameters.AddWithValue("@employeeId", id);
-            cmd.Parameters.AddWithValue("@firstName", fName);
-            cmd.Parameters.AddWithValue("@middleName", MName);
-            cmd.Parameters.AddWithValue("@lastName", lName);
-            cmd.Parameters.AddWithValue("@birthday", bdate);
-            cmd.Parameters.AddWithValue("@emergencyName", name);
-            cmd.Parameters.AddWithValue("@emergencyAddress", address);
-            cmd.Parameters.AddWithValue("@emergencyContact", contact);
-            cmd.Parameters.AddWithValue("@sssnum", sss);
-            cmd.Parameters.AddWithValue("@tinnum", tin);
-            cmd.Parameters.AddWithValue("@dateEmployed", dateEmp);
-            cmd.Parameters.AddWithValue("@dateFrom", from);
-            cmd.Parameters.AddWithValue("@dateTo", to);
-            cmd.Parameters.AddWithValue("@userName", Uname);
-            cmd.Parameters.AddWithValue("@email",email);
-            cmd.Parameters.AddWithValue("@password", password);
-
-
-            con.Open();
-            int i = cmd.ExecuteNonQuery();
-
-            con.Close();
-
-            if (i != 0)
-            {
-                MessageBox.Show(i + "Data Saved.");
-            }
         }
         protected void fromButton_Click(object sender, ImageClickEventArgs e)
         {
@@ -166,7 +134,7 @@ namespace EmpSys
             birthdayButton.Visible = true;
         }
 
-
+     
     }
 
 }

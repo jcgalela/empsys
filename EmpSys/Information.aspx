@@ -192,7 +192,7 @@
                                 <div class="auto-style2">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         <asp:Button ID="Button1" runat="server" Text="Create" BackColor="#333333" ForeColor="White" Width="90px" />
+                         <asp:Button ID="Button1" runat="server" Text="Create" BackColor="#333333" ForeColor="White" Width="90px" OnClick="Button1_Click" />
                                     </span>
                                 </div>
                             </div>
