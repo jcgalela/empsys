@@ -18,7 +18,7 @@
             text-align: left;
             margin-top: 27px;
         }
-       
+
         .auto-style2 {
             margin: auto;
             border: 2px solid;
@@ -30,6 +30,7 @@
         .auto-style3 {
             width: 99%;
             height: 105px;
+            font-family: Verdana, Geneva, sans-serif;
         }
 
         .auto-style4 {
@@ -45,6 +46,7 @@
             font-size: xx-large;
             font-weight: normal;
             color: #333333;
+            font-family: Verdana, Geneva, sans-serif;
         }
 
         .changepassbutton {
@@ -78,13 +80,15 @@
 
         .auto-style9 {
             text-align: center;
+            font-weight: bold;
         }
 
         .topnav {
-             overflow: hidden;
-            background-color:#363940;
+            overflow: hidden;
+            background-color: #363940;
             background-repeat: no-repeat !important;
             background-image: url("navline.png");
+            font-family: Verdana, Geneva, sans-serif;
             background-position: left;
         }
 
@@ -95,11 +99,12 @@
                 padding: 14px 16px;
                 text-decoration: none;
                 font-size: 17px;
+                font-family: Verdana, Geneva, sans-serif;
             }
 
                 .topnav a:hover {
-                    background-color: #ddd;
-                    color: black;
+                    background-color: #1976d2;
+                    color: white;
                 }
 
                 .topnav a.active {
@@ -111,12 +116,12 @@
             float: right;
         }
 
-        .footer {
-            position: fixed;
+        .container-fluid {
+            position: absolute;
             left: 0;
             bottom: 0;
             width: 100%;
-            font-family: Arial;
+            font-family: Verdana, Geneva, sans-serif;
             font-size: 14px;
             font-weight: bold;
             color: black;
@@ -126,55 +131,54 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <div class="topnav">
-                <div class="topnav-right">
-                    <a href="#Changepass">Change Password</a>
-                    <a href="#Logout">Logout</a>
-                    <a>Welcome, "Lebron"</a>
-                </div>
-            </div>
 
-            <div class="auto-style1">
-                &nbsp;<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="topnav">
+            <a>Employee Registration System</a>
+            <div class="topnav-right">
+                <a href="#LoginHome">Home</a>
+            </div>
+        </div>
+
+        <div class="auto-style1">
+            &nbsp;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Image ID="Image1" runat="server" color="#333333" Height="25px" ImageUrl="~/61457.png" Width="39px" />
 
-                &nbsp;&nbsp;<strong><span class="auto-style6">&nbsp;CHANGE PASSWORD<br />
-                    <hr />
-                </span></strong>
-                &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
-                    <br />
-                    <table cellspacing="3" class="auto-style3">
-                        <tr>
-                            <td class="auto-style9">CURRENT PASSWORD:</td>
-                            <td class="auto-style4">
-                                <asp:TextBox ID="currentPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style7">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                            <td class="auto-style8">
-                                <asp:TextBox ID="newPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONFIRM NEW PASSWORD:</td>
-                            <td class="auto-style4">
-                                <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <table cellspacing="3" class="auto-style5" style="text-align: center">
-                        <tr>
-                            <td>
-                                <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" />
-                            </td>
-                        </tr>
-                    </table>
-                </asp:Panel>
-            </div>
+            &nbsp;&nbsp;<strong><span class="auto-style6">&nbsp;CHANGE PASSWORD<br />
+                <hr><hr />
+            </span></strong>
+            &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
+                <br />
+                <table cellspacing="3" class="auto-style3">
+                    <tr>
+                        <td class="auto-style9">CURRENT PASSWORD:&nbsp;</td>
+                        <td class="auto-style4">
+                            <asp:TextBox ID="currentPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style9">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                        <td class="auto-style4">
+                            <asp:TextBox ID="newPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONFIRM NEW PASSWORD:</td>
+                        <td class="auto-style4">
+                            <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <table cellspacing="3" class="auto-style5" style="text-align: center">
+                    <tr>
+                        <td>
+                            <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" />
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
+        </div>
     </form>
     <p>
         &nbsp;
@@ -184,10 +188,10 @@
     </p>
     <br />
 
-     <footer class="container-fluid">
+    <footer class="container-fluid">
 
-        <center>TAGINA HASDHSADHSADHSDAH The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</center>
-        
+       <p>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</p>
+
     </footer>
 
 </body>
