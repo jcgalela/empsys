@@ -119,8 +119,9 @@
                         <h4><b>TIN Number:</b>
                             <asp:TextBox ID="tinText" runat="server"></asp:TextBox></h4>
                         <br>
-                        <h4><b>Date Employed:</b>
-                            <asp:TextBox ID="dateEmployedText" runat="server"></asp:TextBox></h4>
+                        <h4><b>Date Employed:</b><asp:TextBox ID="dateEmployedText" runat="server" ReadOnly="True"></asp:TextBox>
+                            <asp:ImageButton ID="dateEmployedButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="dateEmployedButton_Click" />
+                            <asp:Calendar ID="dateEmployedCalendar" runat="server" Visible="False" OnSelectionChanged="dateEmployedCalendar_SelectionChanged"></asp:Calendar></h4>
                         <br>
 
                         <h4><b>Effective Date:</b></h4>

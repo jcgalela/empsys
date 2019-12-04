@@ -78,6 +78,24 @@ namespace EmpSys
         protected global::System.Web.UI.WebControls.TextBox dateEmployedText;
 
         /// <summary>
+        /// dateEmployedButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton dateEmployedButton;
+
+        /// <summary>
+        /// dateEmployedCalendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar dateEmployedCalendar;
+
+        /// <summary>
         /// fromText control.
         /// </summary>
         /// <remarks>
