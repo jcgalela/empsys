@@ -17,6 +17,7 @@
             background-repeat: no-repeat !important;
             background-image: url("navline.png");
             background-position: left;
+            font-family: Verdana, Geneva, sans-serif;
         }
 
             .topnav a {
@@ -42,12 +43,6 @@
             float: right;
         }
 
-        .col-sm-6 {
-        }
-
-        .col-sm-4 {
-        }
-
         .auto-style2 {
             position: relative;
             min-height: 1px;
@@ -60,6 +55,24 @@
 
         .Details {
             color: dodgerblue;
+        }
+
+        .container-fluid {
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        .container {
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        .auto-style8 {
+            font-family: Verdana, Geneva, sans-serif;
+            font-weight: bold;
+             font-size: x-large;
+        }
+        .auto-style9 {
+            font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
@@ -96,29 +109,31 @@
                                 <asp:ListItem>Regular</asp:ListItem>
                                 <asp:ListItem>Trainee</asp:ListItem>
                             </asp:DropDownList></h4>
-                        <h4><b>Employee Id:
+                        <br>
+                        <h4><b>Employee Id:</b>
                             <asp:TextBox ID="empIdText" runat="server"></asp:TextBox></h4>
-
-                        <h4><b>SSS Number:
+                        <br>
+                        <h4><b>SSS Number:</b>
                             <asp:TextBox ID="sssText" runat="server"></asp:TextBox></h4>
-
-                        <h4><b>TIN Number:
+                        <br>
+                        <h4><b>TIN Number:</b>
                             <asp:TextBox ID="tinText" runat="server"></asp:TextBox></h4>
-
-                        <h4><b>Date Employed:
+                        <br>
+                        <h4><b>Date Employed:</b>
                             <asp:TextBox ID="dateEmployedText" runat="server"></asp:TextBox></h4>
+                        <br>
 
-                        <h4><b>Effective Date:</h4>
-                        <h4><b>From:<asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox>
+                        <h4><b>Effective Date:</b></h4>
+                        <h4><b>From:</b><asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox>
                             <asp:ImageButton ID="fromButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="fromButton_Click" />
-                            <asp:Calendar ID="fromCalendar" runat="server" Visible="False" OnSelectionChanged="fromCalendar_SelectionChanged" ></asp:Calendar></h4>
-
-                            <h4><b>To:<asp:TextBox ID="toText" runat="server" ReadOnly="True"></asp:TextBox>
+                            <asp:Calendar ID="fromCalendar" runat="server" Visible="False" OnSelectionChanged="fromCalendar_SelectionChanged"></asp:Calendar></h4>
+                        <br>
+                        <h4><b>To:</b><asp:TextBox ID="toText" runat="server" ReadOnly="True"></asp:TextBox>
                             <asp:ImageButton ID="toButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="toButton_Click" />
                             <asp:Calendar ID="toCalendar" runat="server" Visible="False" OnSelectionChanged="toCalendar_SelectionChanged"></asp:Calendar></h4>
-
-                            <h4><b>Signature:</h4>
-                            <asp:ImageButton ID="uploadSignature" runat="server" Height="50px" ImageUrl="~/signatue.PNG" />
+                        <br>
+                        <h4><b>Signature:</b></h4>
+                        <asp:ImageButton ID="uploadSignature" runat="server" Height="50px" ImageUrl="~/sig.PNG" />
                     </ul>
                     <br>
 
@@ -137,7 +152,7 @@
                             <h2 class="Details">Contact Details</h2>
                             <br />
                             <ul>
-                                <h4>Image: &nbsp;<br>
+                                <h4><b>Image:</b> &nbsp;<br>
                                     <br>
                                     <asp:ImageButton ID="uploadImage" runat="server" Height="200px" ImageUrl="~/upload.PNG" />
 
@@ -149,20 +164,24 @@
                                     <asp:ListItem>Ms.</asp:ListItem>
                                     <asp:ListItem>Mrs.</asp:ListItem>
                                 </asp:DropDownList>
-                                <h4><b>First Name:<asp:TextBox ID="firstNameText" runat="server"></asp:TextBox></h4>
-                                <h4><b>Middle Name:<asp:TextBox ID="middleNameText" runat="server"></asp:TextBox></h4>
-                                <h4><b>Last Name:<asp:TextBox ID="lastNameText" runat="server"></asp:TextBox></h4>
-                                <h4><b>Date of Birth:<asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
+                                <h4><b>First Name:</b><asp:TextBox ID="firstNameText" runat="server"></asp:TextBox></h4>
+                                <br>
+                                <h4><b>Middle Name:</b><asp:TextBox ID="middleNameText" runat="server"></asp:TextBox></h4>
+                                <br>
+                                <h4><b>Last Name:</b><asp:TextBox ID="lastNameText" runat="server"></asp:TextBox></h4>
+                                 <br>
+                                <h4><b>Date of Birth:</b><asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
                                     <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="birthdayButton_Click" />
                                     <asp:Calendar ID="birthdayCalendar" runat="server" Visible="False" OnSelectionChanged="birthdayCalendar_SelectionChanged"></asp:Calendar>
                                     <br />
                                     <br />
                                     <br />
-                                    <h4><b>In case of emergency, please notify,</h4>
-                                    <h4><b>Name:<asp:TextBox ID="emergencyName" runat="server"></asp:TextBox></h4>
-
-                                    <h4><b>Address:<asp:TextBox ID="emergencyAddress" runat="server"></asp:TextBox></h4>
-                                    <h4><b>Contact No:<asp:TextBox ID="emergencyContact" runat="server"></asp:TextBox></h4>
+                                    <h4><b>In case of emergency, please notify,</b></h4>
+                                    <h4><b>Name:</b><asp:TextBox ID="emergencyName" runat="server"></asp:TextBox></h4>
+                                     <br>
+                                    <h4><b>Address:</b><asp:TextBox ID="emergencyAddress" runat="server"></asp:TextBox></h4>
+                                     <br>
+                                    <h4><b>Contact No:</b><asp:TextBox ID="emergencyContact" runat="server"></asp:TextBox></h4>
                             </ul>
                             <br>
                         </div>
@@ -170,16 +189,19 @@
 
                     <div class="container-fluid">
                         <div class="row content">
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                                 <h2 class="Details">Login Information</h2>
                                 <br />
                                 <ul>
-                                    <h4><b>UserName:<asp:TextBox ID="userNameText" runat="server"></asp:TextBox></h4>
-                                    <h4><b>Email:<asp:TextBox ID="emailText" runat="server"></asp:TextBox></h4>
-                                    <h4><b>Confirm Email:
+                                    <h4><b>UserName:</b><asp:TextBox ID="userNameText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Email:</b><asp:TextBox ID="emailText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Confirm Email:</b>
                                         <asp:TextBox ID="confirmEmailText" runat="server"></asp:TextBox></h4>
-                                    <h4><b>Password:<asp:TextBox ID="passwordText" runat="server"></asp:TextBox></h4>
-                                    <h4><b>Confirm Password:<asp:TextBox ID="confirmPassText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Password:</b><asp:TextBox ID="passwordText" runat="server"></asp:TextBox></h4>
+                                    <h4><b>Confirm Password:</b><asp:TextBox ID="confirmPassText" runat="server"></asp:TextBox></h4>
+                                    <h4 class="auto-style9">
+                        <center><b><asp:Button ID="Button1" runat="server" Text="Create" BackColor="#333333" ForeColor="White" Width="163px" OnClick="Button1_Click" Height="46px" /></b></center>
+                                    </h4>
                                 </ul>
 
                                 <br>
@@ -189,12 +211,6 @@
                         <br>
                         <div class="container">
                             <div class="row content">
-                                <div class="auto-style2">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         <asp:Button ID="Button1" runat="server" Text="Create" BackColor="#333333" ForeColor="White" Width="90px" OnClick="Button1_Click" />
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     </div>

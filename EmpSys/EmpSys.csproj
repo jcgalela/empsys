@@ -185,6 +185,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Settings_black-512.png" />
+    <Content Include="sig.PNG" />
     <Content Include="signatue.PNG" />
     <Content Include="Site.Master" />
     <Content Include="upload.PNG" />
