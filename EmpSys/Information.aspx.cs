@@ -79,6 +79,17 @@ namespace EmpSys
                 birthdayCalendar.Visible = false;
             }
         }
+        protected void dateEmployedButton_Click(object sender, ImageClickEventArgs e)
+        {
+            if (dateEmployedCalendar.Visible == false)
+            {
+                dateEmployedCalendar.Visible = true;
+            }
+            else if (dateEmployedCalendar.Visible == true)
+            {
+                dateEmployedCalendar.Visible = false;
+            }
+        }
         protected void fromCalendar_SelectionChanged(object sender, EventArgs e)
         {
             fromText.Text = fromCalendar.SelectedDate.ToString("MM/dd/yyyy");
@@ -97,8 +108,13 @@ namespace EmpSys
             birthdayCalendar.Visible = false;
             birthdayButton.Visible = true;
         }
+        protected void dateEmployedCalendar_SelectionChanged(object sender, EventArgs e)
+        {
+            dateEmployedText.Text = dateEmployedCalendar.SelectedDate.ToString("MM/dd/yyyy");
+            dateEmployedCalendar.Visible = false;
+            dateEmployedButton.Visible = true;
+        }
 
-     
     }
 
 }
