@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Employee Registration Sytem</title>
-     <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,15 +25,16 @@
             height: 19px;
             text-align: center;
             border: thin;
-            border-color:black;
+            border-color: black;
         }
 
         .topnav {
             overflow: hidden;
-            background-color:#363940;
+            background-color: #363940;
             background-repeat: no-repeat !important;
             background-image: url("navline.png");
             background-position: left;
+            font-family: Verdana, Geneva, sans-serif;
         }
 
             .topnav a {
@@ -59,12 +60,12 @@
             float: right;
         }
 
-        .footer {
-            position: fixed;
+        .container-fluid {
+            position: absolute;
             left: 0;
             bottom: 0;
             width: 100%;
-            font-family: Arial;
+            font-family: Verdana, Geneva, sans-serif;
             font-size: 14px;
             font-weight: bold;
             color: black;
@@ -76,28 +77,31 @@
             border-bottom-right-radius: 5px 5px;
             border-bottom-left-radius: 5px 5px;
             border-top-right-radius: 5px 5px;
+            font-family: Verdana, Geneva, sans-serif;
         }
 
         .username {
-            font-family: Arial;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 14px;
             font-size: 14px;
             font-weight: bold;
         }
 
         .password {
-            font-family: Arial;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 14px;
             font-size: 14px;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
-  
+
     <form id="form1" runat="server">
-        
+
         <div class="topnav">
             <a>Employee Registration System</a>
-            <div class="topnav-right">          
+            <div class="topnav-right">
             </div>
         </div>
 
@@ -106,10 +110,10 @@
         </div>
         <div class="auto-style1">
             <br />
-                                      <%if (Session["Error"].ToString() != string.Empty)
-    {%>
-<p class="alert alert-danger text-center" id="successMessage">Username or Password is Incorrect!</p>
-<% }%>
+            <%if (Session["Error"].ToString() != string.Empty)
+                {%>
+            <p class="alert alert-danger text-center" id="successMessage">Username or Password is Incorrect!</p>
+            <% }%>
     
             &nbsp;<asp:Label ID="Label2" CssClass="username" runat="server" Text="Username"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -119,9 +123,9 @@
             &nbsp;<asp:Label ID="Label1" CssClass="password" runat="server" Text="Password"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-            <asp:TextBox ID="PassTextBox" runat="server" Height="21px" Width="264px"  TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="PassTextBox" runat="server" Height="21px" Width="264px" TextMode="Password"></asp:TextBox>
             <br />
-            <asp:HyperLink ID="ForgotPass" runat="server" ForeColor="#0066CC" NavigateUrl="ChangePassword.aspx">Forgot Password? </asp:HyperLink>
+            <asp:HyperLink ID="ForgotPass" runat="server" ForeColor="#0066CC" NavigateUrl="ForgotPass.aspx">Forgot Password? </asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
 
@@ -136,10 +140,10 @@
     <p>
     </p>
 
-     <footer class="container-fluid">
+    <footer class="container-fluid">
 
-        <center>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</center>
-       
+        <p>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.</p>
+
     </footer>
 </body>
 </html>
