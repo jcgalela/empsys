@@ -55,7 +55,10 @@ namespace EmpSysLibrary
                 command.Dispose();
                 cnn.Close();
                 
-            } catch (Exception){}
+            } catch (Exception ex)
+            {
+                string error = ex.Message;
+            }
         }
     }
 }
