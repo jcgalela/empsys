@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmpSysLibrary;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -41,45 +42,8 @@ namespace EmpSys
             string email = emailText.Text;
             string password = passwordText.Text;
 
-            string connectionString;
-            SqlConnection cnn;
-
-            connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
-
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            String sql = "";
-
-            sql = "Insert into Employee(employeeId," +
-                "employeeStatus," +
-                "firstName," +
-                "middleName," +
-                "lastName," +
-                "birthday," +
-                "emergencyName," +
-                "emergencyAddress," +
-                "emergencyContact," +
-                "sssnum," +
-                "tinnum," +
-                "dateEmployed," +
-                "dateFrom," +
-                "dateTo," +
-                "userName," +
-                "email," +
-                "password" +
-                ") " +
-                "values ( '" + id + "','" + drop + "','" + fName + "','" + MName + "','" + lName + "'," +
-                "'" + bdate + "','" + name + "','" + address + "','" + contact + "','" + sss + "'," +
-                "'" + tin + "','" + dateEmp + "','" + to + "','" + from + "','" + Uname + "','" + email + "','" + password + "')";
-            command = new SqlCommand(sql, cnn);
-            adapter.InsertCommand = new SqlCommand(sql, cnn);
-            adapter.InsertCommand.ExecuteNonQuery();
-
-            command.Dispose();
-            cnn.Close();
+            DBRelated db = new DBRelated();
+            db.DbInsert(drop, id, fName, MName, lName, bdate, name, address, contact, sss, tin, dateEmp, from, to, Uname, email, password);
 
         }
         protected void fromButton_Click(object sender, ImageClickEventArgs e)
