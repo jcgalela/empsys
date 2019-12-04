@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace EmpSys
 {
@@ -104,7 +105,7 @@ namespace EmpSys
 
             if (i != 0)
             {
-                MessageBox.Show(i + "Data Saved");
+                MessageBox.Show(i + "Data Saved.");
             }
         }
         protected void fromButton_Click(object sender, ImageClickEventArgs e)

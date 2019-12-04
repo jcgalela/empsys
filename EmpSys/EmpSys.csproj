@@ -57,6 +57,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -143,7 +144,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Information.aspx" />
     <Content Include="Login.aspx" />
-	<Content Include="Model\Employee.Context.tt">
+    <Content Include="Model\Employee.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Employee.Context.cs</LastGenOutput>
       <DependentUpon>Employee.edmx</DependentUpon>
