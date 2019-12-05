@@ -68,8 +68,9 @@
         .auto-style8 {
             font-family: Verdana, Geneva, sans-serif;
             font-weight: bold;
-             font-size: x-large;
+            font-size: x-large;
         }
+
         .auto-style9 {
             font-weight: bold;
             text-align: center;
@@ -121,17 +122,20 @@
                         <br>
                         <h4><b>Date Employed:</b><asp:TextBox ID="dateEmployedText" runat="server" ReadOnly="True"></asp:TextBox>
                             <asp:ImageButton ID="dateEmployedButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="dateEmployedButton_Click" />
-                            <asp:Calendar ID="dateEmployedCalendar" runat="server" Visible="False" OnSelectionChanged="dateEmployedCalendar_SelectionChanged"></asp:Calendar></h4>
+                            <asp:Calendar ID="dateEmployedCalendar" runat="server" Visible="False" OnSelectionChanged="dateEmployedCalendar_SelectionChanged"></asp:Calendar>
+                        </h4>
                         <br>
 
                         <h4><b>Effective Date:</b></h4>
                         <h4><b>From:</b><asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox>
                             <asp:ImageButton ID="fromButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="fromButton_Click" />
-                            <asp:Calendar ID="fromCalendar" runat="server" Visible="False" OnSelectionChanged="fromCalendar_SelectionChanged"></asp:Calendar></h4>
+                            <asp:Calendar ID="fromCalendar" runat="server" Visible="False" OnSelectionChanged="fromCalendar_SelectionChanged"></asp:Calendar>
+                        </h4>
                         <br>
                         <h4><b>To:</b><asp:TextBox ID="toText" runat="server" ReadOnly="True"></asp:TextBox>
                             <asp:ImageButton ID="toButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="toButton_Click" />
-                            <asp:Calendar ID="toCalendar" runat="server" Visible="False" OnSelectionChanged="toCalendar_SelectionChanged"></asp:Calendar></h4>
+                            <asp:Calendar ID="toCalendar" runat="server" Visible="False" OnSelectionChanged="toCalendar_SelectionChanged"></asp:Calendar>
+                        </h4>
                         <br>
                         <h4><b>Signature:</b></h4>
                         <asp:ImageButton ID="uploadSignature" runat="server" Height="50px" ImageUrl="~/sig.PNG" />
@@ -170,7 +174,7 @@
                                 <h4><b>Middle Name:</b><asp:TextBox ID="middleNameText" runat="server"></asp:TextBox></h4>
                                 <br>
                                 <h4><b>Last Name:</b><asp:TextBox ID="lastNameText" runat="server"></asp:TextBox></h4>
-                                 <br>
+                                <br>
                                 <h4><b>Date of Birth:</b><asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
                                     <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="birthdayButton_Click" />
                                     <asp:Calendar ID="birthdayCalendar" runat="server" Visible="False" OnSelectionChanged="birthdayCalendar_SelectionChanged"></asp:Calendar>
@@ -179,9 +183,9 @@
                                     <br />
                                     <h4><b>In case of emergency, please notify,</b></h4>
                                     <h4><b>Name:</b><asp:TextBox ID="emergencyName" runat="server"></asp:TextBox></h4>
-                                     <br>
+                                    <br>
                                     <h4><b>Address:</b><asp:TextBox ID="emergencyAddress" runat="server"></asp:TextBox></h4>
-                                     <br>
+                                    <br>
                                     <h4><b>Contact No:</b><asp:TextBox ID="emergencyContact" runat="server"></asp:TextBox></h4>
                             </ul>
                             <br>
@@ -201,14 +205,12 @@
                                     <h4><b>Password:</b><asp:TextBox ID="passwordText" runat="server"></asp:TextBox></h4>
                                     <h4><b>Confirm Password:</b><asp:TextBox ID="confirmPassText" runat="server"></asp:TextBox></h4>
                                     <h4 class="auto-style9">
-                        <center><b><asp:Button ID="Button1" runat="server" Text="Create" BackColor="#333333" ForeColor="White" Width="163px" OnClick="Button1_Click" Height="46px" /></b></center>
-                                    </h4>
                                 </ul>
-
-                                <br>
+                                <br />
                                 </span>
                             </div>
                         </div>
+                        <center><b><asp:Button ID="Button1" runat="server" Text="Create" BackColor="#333333" ForeColor="White" Width="163px" OnClick="Button1_Click" Height="46px" /></b></center>
                         <br>
                         <div class="container">
                             <div class="row content">
