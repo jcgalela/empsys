@@ -13,5 +13,10 @@ namespace EmpSys
         {
 
         }
+
+        protected void addUserButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Information.aspx");
+        }
     }
 }
