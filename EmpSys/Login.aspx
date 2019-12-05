@@ -133,6 +133,7 @@
             <br />
             <asp:TextBox ID="PassTextBox" placeholder="Enter password" runat="server" Height="35px" Width="302px" TextMode="Password"></asp:TextBox>
             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="ForgotPass" CssClass="forgot" runat="server" ForeColor="#0066CC" NavigateUrl="ForgotPass.aspx">Forgot Password? </asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
