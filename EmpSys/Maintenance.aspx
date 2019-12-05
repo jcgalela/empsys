@@ -109,10 +109,6 @@
             margin: auto;
             background-color: #fff;
         }
-
-        .auto-style12 {
-            margin-left: 82px;
-        }
     </style>
 </head>
 <body>
@@ -160,14 +156,14 @@
                 &nbsp;<table class="auto-style6">
                     <tr>
                         <td class="auto-style7">Search By:</td>
-                        <td class="auto-style8">&nbsp;<asp:DropDownList ID="DropDownList2" runat="server" CssClass="auto-style9" Height="30px" Width="256px">
+                        <td class="auto-style8">&nbsp;<asp:DropDownList ID="searchDropDown" runat="server" CssClass="auto-style9" Height="30px" Width="256px" >
                             <asp:ListItem>Username</asp:ListItem>
                             <asp:ListItem>E-Mail Address</asp:ListItem>
                             <asp:ListItem>Name</asp:ListItem>
                             <asp:ListItem>Contact Number</asp:ListItem>
                         </asp:DropDownList>
                             &nbsp;</td>
-                        <td class="text-center">&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" MaxLength="100" Width="386px" Height="30px"></asp:TextBox>
+                        <td class="text-center">&nbsp;&nbsp;<asp:TextBox ID="searchTextBox" runat="server" MaxLength="100" Width="386px" Height="30px" ></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -181,38 +177,56 @@
         <div>
             <center>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="searchButton" runat="server" CssClass="search" Text="Search" BackColor="#333333" BorderColor="#333333" ForeColor="White" Height="41px" Width="82px" />
+                <asp:Button ID="searchButton" runat="server" CssClass="search" Text="Search" BackColor="#333333" BorderColor="#333333" ForeColor="White" Height="41px" Width="82px" OnClick="searchButton_Click" />
                 &nbsp;
-                <asp:Button ID="clearButton" runat="server" CssClass="clear" Text="Clear" BackColor="#333333" BorderColor="#333333" ForeColor="White" Height="41px" Width="82px" />
+                <asp:Button ID="clearButton" runat="server" CssClass="clear" Text="Clear" BackColor="#333333" BorderColor="#333333" ForeColor="White" Height="41px" Width="82px" OnClick="clearButton_Click" />
             </center>
         </div>
         <br />
         <br />
         <br />
-
-
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">First</a>
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                    <a class="page-link" href="#">Last</a>
-                </li>
-            </ul>
-        </nav>
-
-
-
-
-
-
-
+        <div align="center">
+            <nav aria-label="Page navigation example">
+                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="SqlDataSource" ForeColor="Black" Width="1036px" OnSelectedIndexChanged="dataGrid_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="userName" HeaderText="Username" SortExpression="userName"/>
+                        <asp:TemplateField HeaderText="Name" SortExpression="Name">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("firstName") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("firstName") %>'></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("middleName") %>'></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("lastName") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="email" HeaderText="E-Mail Address" SortExpression="email" />
+                        <asp:BoundField DataField="emergencyContact" HeaderText="Mobile Number" SortExpression="emergencyContact" />
+                        <asp:BoundField DataField="employeeStatus" HeaderText="User Status" SortExpression="employeeStatus" />
+                        <asp:TemplateField ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:Button ID="editButton" runat="server" CausesValidation="false" CommandName="Edit" Text="Edit" />
+                                <asp:Button ID="deleteButton" runat="server" CausesValidation="false" CommandName="Delete" Text="Delete" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:EISConnectionStrings %>" SelectCommand="SELECT [userName], [firstName], [middleName], [lastName], [email], [emergencyContact], [employeeStatus] FROM [Employee]"></asp:SqlDataSource>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">First</a>
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                        <a class="page-link" href="#">Last</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </form>
 </body>
 </html>

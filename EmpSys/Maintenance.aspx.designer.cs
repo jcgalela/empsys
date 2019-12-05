@@ -51,22 +51,22 @@ namespace EmpSys
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// searchDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList searchDropDown;
 
         /// <summary>
-        /// TextBox2 control.
+        /// searchTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox searchTextBox;
 
         /// <summary>
         /// searchButton control.
@@ -85,5 +85,23 @@ namespace EmpSys
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button clearButton;
+
+        /// <summary>
+        /// dataGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dataGrid;
+
+        /// <summary>
+        /// SqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource;
     }
 }
