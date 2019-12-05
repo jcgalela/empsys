@@ -21,16 +21,14 @@ namespace EmpSysLibrary
             {
                 drop = "lastName";
             }
-            else if (drop == "Contact Number")
+            else if (drop == "Contact_Number")
             {
                 drop = "emergencyContact";
             }
-            else if (drop == "E-Mail Address")
+            else if (drop == "E-Mail_Address")
             {
                 drop = "email";
             }
-            else
-                drop = "*";
             return drop;
         }
         public void SearchUser(string drop, string type)

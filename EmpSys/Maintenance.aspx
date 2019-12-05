@@ -156,14 +156,14 @@
                 &nbsp;<table class="auto-style6">
                     <tr>
                         <td class="auto-style7">Search By:</td>
-                        <td class="auto-style8">&nbsp;<asp:DropDownList ID="searchDropDown" runat="server" CssClass="auto-style9" Height="30px" Width="256px" >
+                        <td class="auto-style8">&nbsp;<asp:DropDownList ID="searchDropDown" runat="server" CssClass="auto-style9" Height="30px" Width="256px">
                             <asp:ListItem>Username</asp:ListItem>
-                            <asp:ListItem>E-Mail Address</asp:ListItem>
+                            <asp:ListItem>E-Mail_Address</asp:ListItem>
                             <asp:ListItem>Name</asp:ListItem>
-                            <asp:ListItem>Contact Number</asp:ListItem>
+                            <asp:ListItem>Contact_Number</asp:ListItem>
                         </asp:DropDownList>
                             &nbsp;</td>
-                        <td class="text-center">&nbsp;&nbsp;<asp:TextBox ID="searchTextBox" runat="server" MaxLength="100" Width="386px" Height="30px" ></asp:TextBox>
+                        <td class="text-center">&nbsp;&nbsp;<asp:TextBox ID="searchTextBox" runat="server" MaxLength="100" Width="386px" Height="30px"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -187,22 +187,35 @@
         <br />
         <div align="center">
             <nav aria-label="Page navigation example">
-                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="SqlDataSource" ForeColor="Black" Width="1036px" OnSelectedIndexChanged="dataGrid_SelectedIndexChanged">
+                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnSelectedIndexChanged="dataGrid_SelectedIndexChanged">
                     <Columns>
-                        <asp:BoundField DataField="userName" HeaderText="Username" SortExpression="userName"/>
-                        <asp:TemplateField HeaderText="Name" SortExpression="Name">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("firstName") %>'></asp:TextBox>
-                            </EditItemTemplate>
+                        <asp:TemplateField HeaderText="Username" SortExpression="Username">
                             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("firstName") %>'></asp:Label>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("middleName") %>'></asp:Label>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("lastName") %>'></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("userName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="email" HeaderText="E-Mail Address" SortExpression="email" />
-                        <asp:BoundField DataField="emergencyContact" HeaderText="Mobile Number" SortExpression="emergencyContact" />
-                        <asp:BoundField DataField="employeeStatus" HeaderText="User Status" SortExpression="employeeStatus" />
+                        <asp:TemplateField HeaderText="Name" SortExpression="Name">
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("firstName") %>'></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("middleName") %>'></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("lastName") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="E-Mail Address" SortExpression="E-Mail Address">
+                            <ItemTemplate>
+                                <asp:Label ID="Label4" runat="server" Text='<%# Eval("email") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Mobile Number" SortExpression="Mobile Number">
+                            <ItemTemplate>
+                                <asp:Label ID="Label5" runat="server" Text='<%# Eval("emergencyContact") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="User Status" SortExpression="User Status">
+                            <ItemTemplate>
+                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("employeeStatus") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
                                 <asp:Button ID="editButton" runat="server" CausesValidation="false" CommandName="Edit" Text="Edit" />
@@ -211,20 +224,8 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:EISConnectionStrings %>" SelectCommand="SELECT [userName], [firstName], [middleName], [lastName], [email], [emergencyContact], [employeeStatus] FROM [Employee]"></asp:SqlDataSource>
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">First</a>
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                        <a class="page-link" href="#">Last</a>
-                    </li>
-                </ul>
+                <%--<asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:EISConnectionStrings %>" SelectCommand="SELECT [userName], [firstName], [middleName], [lastName], [email], [emergencyContact], [employeeStatus] FROM [Employee]"></asp:SqlDataSource>
+               --%>
             </nav>
         </div>
     </form>
