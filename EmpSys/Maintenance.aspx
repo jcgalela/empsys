@@ -193,7 +193,7 @@
         <br />
         <div align="center">
             <nav aria-label="Page navigation example">
-                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnSelectedIndexChanged="dataGrid_SelectedIndexChanged">
+                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px">
                     <Columns>
                         <asp:TemplateField HeaderText="Username" SortExpression="Username">
                             <ItemTemplate>

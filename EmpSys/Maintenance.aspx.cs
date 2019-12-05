@@ -13,6 +13,7 @@ namespace EmpSys
 {
     public partial class Maintenance : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -31,17 +32,12 @@ namespace EmpSys
             Response.Redirect("/Information.aspx");
         }
 
-        protected void dataGrid_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void searchButton_Click(object sender, EventArgs e)
         {
             string drop = searchDropDown.SelectedValue;
             string type = searchTextBox.Text;
             Search search = new Search();
-            drop = search.Drop(drop);
+            string sql = search.SearchUser(drop, type);
             string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
             DataTable dtbl = new DataTable();
 
@@ -50,7 +46,7 @@ namespace EmpSys
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Employee WHERE " + drop + " = " + "'" + type + "'", sqlCon);
+                    SqlDataAdapter sqlDa = new SqlDataAdapter(sql, sqlCon);
                     sqlDa.Fill(dtbl);
                 }
                 if (dtbl.Rows.Count > 0)

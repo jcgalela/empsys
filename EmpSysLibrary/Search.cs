@@ -9,57 +9,32 @@ namespace EmpSysLibrary
 {
     public class Search
     {
-        public string Drop(string type)
+        
+        public string SearchUser(string drop, string type)
         {
-            string drop = "";
+            string query = string.Empty;
 
-            if (type == "Username")
+            if (drop == "Username")
             {
-                drop = "userName";
+                query = "SELECT* FROM Employee WHERE userName = '" + type + "'";
             }
-            else if (type == "Name")
+            else if (drop == "Name")
             {
-                drop = "lastName";
+                query = "SELECT* FROM Employee WHERE lastName = '" + type + "'";
             }
             else if (drop == "Contact_Number")
             {
-                drop = "emergencyContact";
+                query = "SELECT* FROM Employee WHERE emergencyContact = '" + type + "'";
             }
             else if (drop == "E-Mail_Address")
             {
-                drop = "email";
+                query = "SELECT* FROM Employee WHERE email = '" + type + "'";
             }
-            return drop;
-        }
-        public void SearchUser(string drop, string type)
-        {
-            try
+            else
             {
-                string connectionString;
-                SqlConnection cnn;
-
-                connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
-
-                cnn = new SqlConnection(connectionString);
-                cnn.Open();
-                SqlCommand command;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-
-                String sql = "";
-
-                sql = "Select * from Employee where " + drop + "= " + type;
-                command = new SqlCommand(sql, cnn);
-                adapter.InsertCommand = new SqlCommand(sql, cnn);
-                adapter.InsertCommand.ExecuteNonQuery();
-
-                command.Dispose();
-                cnn.Close();
-
+                query = "SELECT * FROM Employee";
             }
-            catch (Exception ex)
-            {
-                string error = ex.Message;
-            }
+            return query;
         }
 
     }
