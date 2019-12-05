@@ -30,6 +30,7 @@ namespace EmpSys
             {
                 Session["Start"] = 0;
                 Session["username"] = details.userName;
+                Session["UserName"] = this.UsernameTextBox.Text.Trim();
                 Response.Redirect("/Maintenance.aspx");
             
             }

@@ -134,6 +134,13 @@
             font-weight: bold;
             color: red !important;
         }
+
+        .welcome {
+            font-size: 17px;
+            font-family: Verdana, Geneva, sans-serif;
+            color: white;  
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -142,8 +149,10 @@
         <div class="topnav">
             <a>Employee Registration System</a>
             <div class="topnav-right">
+                <asp:Label ID="lblWelcomeMessage" class="welcome" runat="server" Width="265px"/>
                 <asp:HyperLink ID="LoginHome" runat="server" NavigateUrl="LogIn.aspx">Home </asp:HyperLink>
                 <asp:HyperLink ID="UserMaintenance" runat="server" NavigateUrl="Maintenance.aspx">User Maintenance </asp:HyperLink>
+
             </div>
         </div>
 
@@ -206,8 +215,6 @@
                 </div>
             </div>
         </div>
-
-
 
     </form>
     <br />

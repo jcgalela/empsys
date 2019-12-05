@@ -114,11 +114,11 @@
 <body>
 
     <div class="topnav">
-        <a>Employee Registration</a>
+        <a>Employee Registration System</a>
         <div class="topnav-right">
-            <a href="#Changepass">Change Password</a>
-            <a href="#Logout">Logout</a>
-            <a>Welcome, "Lebron"</a>
+            <asp:Label ID="lblWelcomeMessage" class="welcome" runat="server" Width="265px" />
+            <asp:HyperLink ID="Changepass" runat="server" NavigateUrl="ChangePassword.aspx">Change Password</asp:HyperLink>
+            <asp:HyperLink ID="LoginHome" runat="server" NavigateUrl="LogIn.aspx">Logout </asp:HyperLink>
         </div>
     </div>
 

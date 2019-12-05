@@ -105,6 +105,12 @@
             color: black;
             text-align: center;
         }
+         .welcome {
+            font-size: 17px;
+            font-family: Verdana, Geneva, sans-serif;
+            color: white;  
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -112,9 +118,9 @@
     <div class="topnav">
         <a>Employee Registration System</a>
         <div class="topnav-right">
+            <asp:Label ID="lblWelcomeMessage" class="welcome" runat="server" Width="265px" />
             <asp:HyperLink ID="Changepass" runat="server" NavigateUrl="ChangePassword.aspx">Change Password</asp:HyperLink>
             <asp:HyperLink ID="LoginHome" runat="server" NavigateUrl="LogIn.aspx">Logout </asp:HyperLink>
-            <a>Welcome, "Lebron"</a>
         </div>
     </div>
 

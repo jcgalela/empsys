@@ -17,7 +17,13 @@ namespace EmpSys
        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!this.IsPostBack)
+            {
+                if (Session["UserName"] != null)
+                {
+                    this.lblWelcomeMessage.Text = string.Format("Welcome, {0}", Session["UserName"].ToString());
+                }
+            }
         }
 
         protected void createButton_Click(object sender, EventArgs e)
