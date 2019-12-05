@@ -142,7 +142,8 @@
         <div class="topnav">
             <a>Employee Registration System</a>
             <div class="topnav-right">
-                <asp:HyperLink ID="LoginHome" runat="server" NavigateUrl="LogIn.aspx">HOME </asp:HyperLink>
+                <asp:HyperLink ID="LoginHome" runat="server" NavigateUrl="LogIn.aspx">Home </asp:HyperLink>
+                <asp:HyperLink ID="UserMaintenance" runat="server" NavigateUrl="Maintenance.aspx">User Maintenance </asp:HyperLink>
             </div>
         </div>
 

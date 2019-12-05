@@ -20,7 +20,7 @@ namespace EmpSys
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void createButton_Click(object sender, EventArgs e)
         {
             CultureInfo provider = CultureInfo.InvariantCulture;
             string drop = DropDownList2.SelectedValue;
@@ -115,6 +115,7 @@ namespace EmpSys
             dateEmployedButton.Visible = true;
         }
 
+       
     }
 
 }

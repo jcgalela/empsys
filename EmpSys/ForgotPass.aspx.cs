@@ -52,7 +52,7 @@ namespace EmpSys
                 string fromaddr = "publicoian@gmail.com";
                 string toaddr = emailText.Text;
                 string password = "Kupalkanaman24";
-                MailMessage mail = new MailMessage();
+                MailMessage mail = new MailMessage(); 
                 mail.From = new MailAddress(fromaddr);
                 mail.Subject = "Password Recovery";
                 mail.Body = string.Format("HI {0}, Your Password is {1}. <br /><br /> Please click here to <a href = http://localhost:52842/Login.aspx > LOGIN </a>  <br /> <br /> Thank You!!", username, Password);

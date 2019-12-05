@@ -135,6 +135,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="TRYLOGIN.aspx" />
     <EntityDeploy Include="Model\Employee.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Employee.Designer.cs</LastGenOutput>
@@ -295,6 +296,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TRYLOGIN.aspx.cs">
+      <DependentUpon>TRYLOGIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRYLOGIN.aspx.designer.cs">
+      <DependentUpon>TRYLOGIN.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
