@@ -109,6 +109,12 @@
             margin: auto;
             background-color: #fff;
         }
+        .welcome {
+            font-size: 17px;
+            font-family: Verdana, Geneva, sans-serif;
+            color: white;  
+            float: right;
+        }
     </style>
 </head>
 <body>
