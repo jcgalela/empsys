@@ -13,61 +13,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style type="text/css">
-        .auto-style1 {
-            height: 327px;
-            text-align: left;
-            margin-top: 27px;
-        }
-
-        .auto-style2 {
-            margin: auto;
-            border: 2px solid;
-            border-color: Gray;
-            border-left-width: 2px;
-            border-right-width: 2px;
-        }
-
-        .auto-style3 {
-            width: 99%;
-            height: 105px;
-            font-family: Verdana, Geneva, sans-serif;
-        }
-
-        .auto-style4 {
-            width: 234px;
-        }
-
-        .auto-style5 {
-            width: 100%;
-        }
-
-
-        .auto-style6 {
-            font-size: xx-large;
-            font-weight: normal;
-            color: #333333;
-            font-family: Verdana, Geneva, sans-serif;
-        }
-
-        .changepassbutton {
-            border-top-left-radius: 10px 10px;
-            border-bottom-right-radius: 10px 10px;
-            border-bottom-left-radius: 10px 10px;
-            border-top-right-radius: 10px 10px;
-            font-size: 14px;
-            padding: 10px 5px;
-            width: 200px;
-        }
-
-        .confirm {
-            border-color: white;
-        }
-
-        .Panel1 {
-            border-color: black;
-            border-radius: 25px;
-        }
-
         .topnav {
             overflow: hidden;
             background-color: #363940;
@@ -101,6 +46,55 @@
             float: right;
         }
 
+        .auto-style2 {
+            margin: auto;
+            border: 2px solid;
+            border-color: Gray;
+            border-left-width: 2px;
+            border-right-width: 2px;
+        }
+
+        .auto-style3 {
+            width: 99%;
+            height: 105px;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        .PassTF {
+            width: 234px;
+        }
+
+        .auto-style5 {
+            width: 100%;
+        }
+
+
+        .changepass {
+            font-size: xx-large;
+            font-weight: normal;
+            color: #333333;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        .changepassbutton {
+            border-top-left-radius: 10px 10px;
+            border-bottom-right-radius: 10px 10px;
+            border-bottom-left-radius: 10px 10px;
+            border-top-right-radius: 10px 10px;
+            font-size: 14px;
+            padding: 10px 5px;
+            width: 200px;
+        }
+
+        .confirm {
+            border-color: white;
+        }
+
+        .Panel1 {
+            border-color: black;
+            border-radius: 25px;
+        }
+
         .container-fluid {
             position: absolute;
             left: 0;
@@ -112,20 +106,33 @@
             color: black;
             text-align: center;
         }
-        .auto-style11 {
+
+        .PassFont {
             text-align: center;
             font-weight: bold;
             width: 197px;
             height: 34px;
         }
-        .auto-style12 {
-            width: 234px;
-            height: 34px;
+
+        .ImageCP {
+            position: relative;
+            min-height: 1px;
+            float: left;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+            height: 123px;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-align: left;
         }
-        .auto-style16 {
+
+        .labelmsg {
             text-align: center;
+            height: 37px;
+            font-size: 20px;
             font-weight: bold;
-            width: 197px;
+            color: red !important;
         }
     </style>
 </head>
@@ -139,60 +146,80 @@
             </div>
         </div>
 
-        <div class="auto-style1">
-            &nbsp;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Image ID="Image1" runat="server" color="#333333" Height="25px" ImageUrl="~/61457.png" Width="39px" />
-
-            &nbsp;&nbsp;<strong><span class="auto-style6">&nbsp;CHANGE PASSWORD<br />
-                <hr><hr />
-            </span></strong>
-            &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
-                <br />
-                <table cellspacing="3" class="auto-style3" style="text-align:center">
-                    <tr>
-                        <td class="auto-style11">CURRENT PASSWORD:&nbsp;</td>
-                        <td class="auto-style12">
-                            <asp:TextBox ID="currentPassText" runat="server" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style16">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="newPassText" runat="server" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONFIRM NEW PASSWORD:</td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <table cellspacing="3" class="auto-style5" style="text-align: center">
-                    <tr>
-                        <td>
-                            <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" OnClick="changePasswordButton_Click" />
-                            <br />
-                            <asp:Label ID="lblmsg" runat="server" Text=""></asp:Label>
-                        </td>
-                    </tr>
-                </table>
-            </asp:Panel>
+        <div class="container">
+            <div class="row content">
+                <div class="ImageCP">
+                    <br />
+                    <asp:Image ID="Image1" runat="server" Height="32px" ImageUrl="~/61457.png" Width="45px" />
+                    <strong><span class="changepass">&nbsp;CHANGE PASSWORD<br />
+                    </span></strong>
+                    <hr />
+                </div>
+            </div>
         </div>
-    <p>
-        &nbsp;
-    </p>
-    <p>
-        &nbsp;
-    </p>
+
+        <div class="container">
+            <div class="row content">
+                <div class="labelmsg">
+                    <asp:Label ID="lblmsg" runat="server" Height="40px" Width="258px"></asp:Label>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row content">
+                <div class="col-sm-12">
+                    &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
+                        <br />
+                        <table class="auto-style3" style="text-align: center">
+                            <tr>
+                                <td class="PassFont">CURRENT PASSWORD:&nbsp;</td>
+                                <td class="PassTF">
+                                    <asp:TextBox ID="currentPassText" runat="server" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="PassFont">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                <td class="PassTF">
+                                    <asp:TextBox ID="newPassText" runat="server" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="PassFont">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONFIRM NEW PASSWORD:</td>
+                                <td class="PassTF">
+                                    <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="Black" Width="285px" TextMode="Password" BorderStyle="Solid" MaxLength="32"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table class="auto-style5" style="text-align: center">
+                            <tr>
+                                <td>
+                                    <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" OnClick="changePasswordButton_Click" />
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                </div>
+            </div>
+        </div>
+
+
+
     </form>
     <br />
 
-    <footer class="container-fluid">
 
-       <p>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.html>
+    <footer class="container-fluid">
+        <p>The information contained herein is the confidential and proprietary property of Computer Aid, Incorporated.html</p>
+    </footer>
+
+
+</body>
+</html>
+
 
 
 

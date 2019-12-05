@@ -31,7 +31,7 @@ namespace EmpSys
 
             if (DT.Rows.Count == 0)
             {
-                lblmsg.Text = "Invalid current password";
+                lblmsg.Text = "Invalid Current Password!!";
 
             }
             else
