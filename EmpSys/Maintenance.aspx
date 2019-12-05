@@ -150,7 +150,7 @@
         <div class="container">
             <div class="auto-style10">
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="addUserButton" runat="server" Text="Add New User" BackColor="#333333" BorderColor="#333333" ForeColor="White" Height="41px" Width="144px" />
+                <asp:Button ID="addUserButton" runat="server" Text="Add New User" BackColor="#333333" BorderColor="#333333" ForeColor="White" Height="41px" Width="144px" OnClick="addUserButton_Click" />
             </div>
         </div>
         <br />
