@@ -68,11 +68,6 @@
             border-radius: 25px;
         }
 
-        .auto-style9 {
-            text-align: center;
-            font-weight: bold;
-        }
-
         .topnav {
             overflow: hidden;
             background-color: #363940;
@@ -120,6 +115,7 @@
         .auto-style10 {
             text-align: left;
             font-weight: bold;
+            width: 255px;
         }
     </style>
 </head>
@@ -138,28 +134,16 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Image ID="Image1" runat="server" color="#333333" Height="25px" ImageUrl="~/61457.png" Width="39px" />
 
-            &nbsp;&nbsp;<strong><span class="auto-style6">&nbsp;CHANGE PASSWORD<br />
+            <strong><span class="auto-style6">FORGOT PASSWORD<br />
                 <hr><hr />
             </span></strong>
             &nbsp;<asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="248px" Width="638px">
                 <br />
                 <table cellspacing="3" class="auto-style3">
                     <tr>
-                        <td class="auto-style10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EMPLOYEE ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                        <td class="auto-style10">&nbsp;ENTER YOUR EMAIL ADDRESS:</td>
                         <td class="auto-style4">
-                            <asp:TextBox ID="empIdText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style9">NEW PASSWORD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="newPassText" runat="server" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CONFIRM NEW PASSWORD:</td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="confirmNewPassText" runat="server" class="confirm" BorderColor="White" Width="224px" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="emailText" runat="server" BorderColor="White" Width="266px" TextMode="Email"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -167,7 +151,10 @@
                 <table cellspacing="3" class="auto-style5" style="text-align: center">
                     <tr>
                         <td>
-                            <asp:Button ID="changePasswordButton" class="changepassbutton" runat="server" Text="CHANGE PASSWORD" BackColor="#333333" ForeColor="White" />
+                            <asp:Button ID="sendButton" class="changepassbutton" runat="server" Text="SEND" BackColor="#333333" ForeColor="White" OnClick="sendButton_Click" />
+                            <br />
+                            <br />
+                            <asp:Label ID="lblMessage" runat="server" />
                         </td>
                     </tr>
                 </table>
