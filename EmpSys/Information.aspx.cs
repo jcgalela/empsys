@@ -10,6 +10,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
+
 namespace EmpSys
 {
     public partial class Information : System.Web.UI.Page
@@ -28,28 +29,36 @@ namespace EmpSys
 
         protected void createButton_Click(object sender, EventArgs e)
         {
-            CultureInfo provider = CultureInfo.InvariantCulture;
-            string drop = DropDownList2.SelectedValue;
-            string id = empIdText.Text;
-            long sss = Convert.ToInt64(sssText.Text);
-            long tin = Convert.ToInt64(tinText.Text);
-            string dateEmp = DateTime.ParseExact(dateEmployedText.Text, "MM/dd/yyyy", provider).ToShortDateString();
-            string from = DateTime.ParseExact(fromText.Text, "MM/dd/yyyy", provider).ToShortDateString();
-            string to = DateTime.ParseExact(toText.Text, "MM/dd/yyyy", provider).ToShortDateString();
-            string fName = firstNameText.Text;
-            string MName = middleNameText.Text;
-            string lName = lastNameText.Text;
-            string bdate = DateTime.ParseExact(birthdayText.Text, "MM/dd/yyyy", provider).ToShortDateString();
-            string name = emergencyName.Text;
-            long contact = Convert.ToInt64(emergencyContact.Text);
-            string address = emergencyAddress.Text;
-            string Uname = userNameText.Text;
-            string email = emailText.Text;
-            string password = passwordText.Text;
+            try
+            {
+                CultureInfo provider = CultureInfo.InvariantCulture;
+                string drop = DropDownList2.SelectedValue;
+                string id = empIdText.Text;
+                long sss = Convert.ToInt64(sssText.Text);
+                long tin = Convert.ToInt64(tinText.Text);
 
-            DBRelated db = new DBRelated();
-            db.DbInsert(id, fName, MName, lName, bdate, name, address, contact, drop, sss,
-                tin, dateEmp, from, to, 0, Uname, email, password, 0);
+                string dateEmp = DateTime.ParseExact(dateEmployedText.Text, "MM/dd/yyyy", provider).ToShortDateString();
+                string from = DateTime.ParseExact(fromText.Text, "MM/dd/yyyy", provider).ToShortDateString();
+                string to = DateTime.ParseExact(toText.Text, "MM/dd/yyyy", provider).ToShortDateString();
+                string fName = firstNameText.Text;
+                string MName = middleNameText.Text;
+                string lName = lastNameText.Text;
+                string bdate = DateTime.ParseExact(birthdayText.Text, "MM/dd/yyyy", provider).ToShortDateString();
+                string name = emergencyName.Text;
+                long contact = Convert.ToInt64(emergencyContact.Text);
+                string address = emergencyAddress.Text;
+                string Uname = userNameText.Text;
+                string email = emailText.Text;
+                string password = passwordText.Text;
+
+                DBRelated db = new DBRelated();
+                db.DbInsert(id, fName, MName, lName, bdate, name, address, contact, drop, sss,
+                    tin, dateEmp, from, to, 0, Uname, email, password, 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred." + ex.Message);
+            }
         }
         protected void fromButton_Click(object sender, ImageClickEventArgs e)
         {
@@ -119,6 +128,8 @@ namespace EmpSys
             dateEmployedCalendar.Visible = false;
             dateEmployedButton.Visible = true;
         }
+
+
     }
 }
     

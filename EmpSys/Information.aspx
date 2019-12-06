@@ -113,6 +113,7 @@
             float: right;
         }
     </style>
+
 </head>
 <body>
 
@@ -149,24 +150,26 @@
                             </asp:DropDownList></h4>
                         <br />
                         <h4><b>Employee Id:</b>
-                            <asp:TextBox ID="empIdText" runat="server" required="" MaximumValue="18"  oninvalid="this.setCustomValidity('')"
-                                onvalid="this.setCustomValidity('')"></asp:TextBox></h4> 
+                            <asp:TextBox ID="empIdText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                         </p>
                         <br />
                         <h4><b>SSS Number:</b>
-                            <asp:TextBox ID="sssText" runat="server" required="" ></asp:TextBox></h4>
+                            <asp:TextBox ID="sssText" runat="server"></asp:TextBox></h4>
                         <br />
                         <h4><b>TIN Number:</b>
                             <asp:TextBox ID="tinText" runat="server"></asp:TextBox></h4>
                         <br />
-                        <h4><b>Date Employed:</b><asp:TextBox ID="dateEmployedText" runat="server" ReadOnly="True"></asp:TextBox>
+                        <h4><b>Date Employed:</b><asp:TextBox ID="dateEmployedText" runat="server" ReadOnly="True" required="" oninvalid="this.setCustomValidity('')"
+                            onvalid="this.setCustomValidity('')"></asp:TextBox>
                             <asp:ImageButton ID="dateEmployedButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="dateEmployedButton_Click" />
                             <asp:Calendar ID="dateEmployedCalendar" runat="server" Visible="False" OnSelectionChanged="dateEmployedCalendar_SelectionChanged"></asp:Calendar>
                         </h4>
                         <br />
 
                         <h4><b>Effective Date:</b></h4>
-                        <h4><b>From:</b><asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox>
+                        <h4><b>From:</b><asp:TextBox ID="fromText" runat="server" ReadOnly="True" required="" oninvalid="this.setCustomValidity('')"
+                            onvalid="this.setCustomValidity('')"></asp:TextBox>
                             <asp:ImageButton ID="fromButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="fromButton_Click" />
                             <asp:Calendar ID="fromCalendar" runat="server" Visible="False" OnSelectionChanged="fromCalendar_SelectionChanged"></asp:Calendar>
                         </h4>
@@ -176,8 +179,10 @@
                             <asp:Calendar ID="toCalendar" runat="server" Visible="False" OnSelectionChanged="toCalendar_SelectionChanged"></asp:Calendar>
                         </h4>
                         <br />
-                        <h4><b>Signature:</b></h4>
-                        <asp:ImageButton ID="uploadSignature" runat="server" Height="50px" ImageUrl="~/sig.PNG" />
+                        <h4><b>Signature:</b><br/>
+                            <br/>
+                        <asp:Image ID="signaImage" runat="server" Height="50px" ImageUrl="~/sig.PNG" />
+                        <asp:FileUpload ID="signaUpload" runat="server" /></h4>
                     </ul>
                     <br />
 
@@ -198,34 +203,42 @@
                             <ul>
                                 <h4><b>Image:</b> &nbsp;<br />
                                     <br />
-                                    <asp:ImageButton ID="uploadImage" runat="server" Height="200px" ImageUrl="~/upload.PNG" />
+                                    <asp:Image ID="image" runat="server" Height="50px" ImageUrl="~/sig.PNG" />
+                                    <asp:FileUpload ID="imageUpload" runat="server" />
                                 </h4>
-
-                                <br />
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                     <asp:ListItem>Mr.</asp:ListItem>
                                     <asp:ListItem>Ms.</asp:ListItem>
                                     <asp:ListItem>Mrs.</asp:ListItem>
                                 </asp:DropDownList>
+                                <br />
+
                             </ul>
-                            <h4><b>First Name:</b><asp:TextBox ID="firstNameText" runat="server"></asp:TextBox></h4>
+                            <h4><b>First Name:</b><asp:TextBox ID="firstNameText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                             <br>
-                            <h4><b>Middle Name:</b><asp:TextBox ID="middleNameText" runat="server"></asp:TextBox></h4>
+                            <h4><b>Middle Name:</b><asp:TextBox ID="middleNameText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                             <br>
-                            <h4><b>Last Name:</b><asp:TextBox ID="lastNameText" runat="server"></asp:TextBox></h4>
+                            <h4><b>Last Name:</b><asp:TextBox ID="lastNameText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                             <br>
-                            <h4><b>Date of Birth:</b><asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
+                            <h4><b>Date of Birth:</b><asp:TextBox ID="birthdayText" runat="server" ReadOnly="True" required="" oninvalid="this.setCustomValidity('')"
+                                onvalid="this.setCustomValidity('')"></asp:TextBox>
                                 <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="birthdayButton_Click" />
                                 <asp:Calendar ID="birthdayCalendar" runat="server" Visible="False" OnSelectionChanged="birthdayCalendar_SelectionChanged"></asp:Calendar>
                                 <br />
                                 <br />
                                 <br />
                                 <h4><b>In case of emergency, please notify,</b></h4>
-                                <h4><b>Name:</b><asp:TextBox ID="emergencyName" runat="server"></asp:TextBox></h4>
+                                <h4><b>Name:</b><asp:TextBox ID="emergencyName" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                                 <br />
-                                <h4><b>Address:</b><asp:TextBox ID="emergencyAddress" runat="server"></asp:TextBox></h4>
+                                <h4><b>Address:</b><asp:TextBox ID="emergencyAddress" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                                 <br>
-                                <h4><b>Contact No:</b><asp:TextBox ID="emergencyContact" runat="server"></asp:TextBox></h4>
+                                <h4><b>Contact No:</b><asp:TextBox ID="emergencyContact" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
 
                                 <br />
                         </div>
@@ -237,11 +250,16 @@
                                 <h2 class="Details">Login Information</h2>
                                 <br />
 
-                                <h4><b>UserName:</b><asp:TextBox ID="userNameText" runat="server"></asp:TextBox></h4>
-                                <h4><b>Email:</b><asp:TextBox ID="emailText" runat="server"></asp:TextBox></h4>
-                                <h4><b>Confirm Email:</b><asp:TextBox ID="confirmEmailText" runat="server"></asp:TextBox></h4>
-                                <h4><b>Password:</b><asp:TextBox ID="passwordText" runat="server"></asp:TextBox></h4>
-                                <h4><b>Confirm Password:</b><asp:TextBox ID="confirmPassText" runat="server"></asp:TextBox></h4>
+                                <h4><b>UserName:</b><asp:TextBox ID="userNameText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                <h4><b>Email:</b><asp:TextBox ID="emailText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                <h4><b>Confirm Email:</b><asp:TextBox ID="confirmEmailText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                <h4><b>Password:</b><asp:TextBox ID="passwordText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                <h4><b>Confirm Password:</b><asp:TextBox ID="confirmPassText" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
 
 
                                 <br />

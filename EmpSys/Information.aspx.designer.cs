@@ -177,22 +177,40 @@ namespace EmpSys
         protected global::System.Web.UI.WebControls.Calendar toCalendar;
 
         /// <summary>
-        /// uploadSignature control.
+        /// signaImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton uploadSignature;
+        protected global::System.Web.UI.WebControls.Image signaImage;
 
         /// <summary>
-        /// uploadImage control.
+        /// signaUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton uploadImage;
+        protected global::System.Web.UI.WebControls.FileUpload signaUpload;
+
+        /// <summary>
+        /// image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image image;
+
+        /// <summary>
+        /// imageUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload imageUpload;
 
         /// <summary>
         /// DropDownList1 control.
