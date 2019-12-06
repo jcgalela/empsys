@@ -15,7 +15,10 @@ namespace EmpSysLibrary
         {
             string query = string.Empty;
 
-            if (drop == "Username")
+            if (drop == "(Default)")
+            {
+                query = "SELECT * FROM Employee";
+            } else if (drop == "Username")
             {
                 query = "SELECT * FROM Employee WHERE userName = '" + type + "'";
             }
@@ -31,10 +34,7 @@ namespace EmpSysLibrary
             {
                 query = "SELECT* FROM Employee WHERE email = '" + type + "'";
             }
-            else
-            {
-                query = "SELECT * FROM Employee";
-            }
+            
             return query;
         }
 

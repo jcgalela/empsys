@@ -31,8 +31,8 @@ namespace EmpSys
             CultureInfo provider = CultureInfo.InvariantCulture;
             string drop = DropDownList2.SelectedValue;
             string id = empIdText.Text;
-            string sss = sssText.Text;
-            string tin = tinText.Text;
+            long sss = Convert.ToInt64(sssText.Text);
+            long tin = Convert.ToInt64(tinText.Text);
             DateTime dateEmp = DateTime.ParseExact(dateEmployedText.Text, "d", provider);
             DateTime from = DateTime.ParseExact(fromText.Text, "d", provider);
             DateTime to = DateTime.ParseExact(toText.Text, "d", provider);
@@ -42,15 +42,15 @@ namespace EmpSys
             string lName = lastNameText.Text;
             DateTime bdate = DateTime.ParseExact(birthdayText.Text, "d", provider);
             string name = emergencyName.Text;
-            string contact = emergencyContact.Text;
+            long contact = Convert.ToInt64(emergencyContact.Text);
             string address = emergencyAddress.Text;
             string Uname = userNameText.Text;
             string email = emailText.Text;
             string password = passwordText.Text;
 
             DBRelated db = new DBRelated();
-            db.DbInsert(drop, id, fName, MName, lName, bdate, name, address, contact, sss, tin, dateEmp, from, to, Uname, email, password);
-
+            db.DbInsert(id, fName, MName, lName, bdate, name, address, contact, drop, sss,
+                tin, dateEmp, from, to, 0, Uname, email, password, 0);
         }
         protected void fromButton_Click(object sender, ImageClickEventArgs e)
         {

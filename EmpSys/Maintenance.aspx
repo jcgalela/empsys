@@ -163,6 +163,7 @@
                     <tr>
                         <td class="auto-style7">Search By:</td>
                         <td class="auto-style8">&nbsp;<asp:DropDownList ID="searchDropDown" runat="server" CssClass="auto-style9" Height="30px" Width="256px">
+                            <asp:ListItem>(Default)</asp:ListItem>
                             <asp:ListItem>Username</asp:ListItem>
                             <asp:ListItem>E-Mail_Address</asp:ListItem>
                             <asp:ListItem>Name</asp:ListItem>
@@ -193,11 +194,11 @@
         <br />
         <div align="center">
             <nav aria-label="Page navigation example">
-                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnSelectedIndexChanged="dataGrid_SelectedIndexChanged" OnRowDeleting="dataGrid_RowDeleting">
+                <asp:GridView ID="dataGrid" runat="server" ItemStyle-HorizontalAlign="Center" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnRowDeleting="dataGrid_RowDeleting">
                     <Columns>
                         <asp:TemplateField HeaderText="Username" SortExpression="Username">
                             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("userName") %>'></asp:Label>
+                                <asp:Label ID="Label" runat="server" Text='<%# Eval("userName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Name" SortExpression="Name">
@@ -224,8 +225,8 @@
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:Button ID="editButton" runat="server" CausesValidation="false" CommandName="Edit" Text="Edit" />
-                                <asp:Button ID="deleteButton" runat="server" CausesValidation="false" CommandName="Delete" Text="Delete" />
+                                <asp:Button ID="editButton" runat="server" CausesValidation="false" CommandName="Edit" Text="Edit" OnClick="editButton_Click" />
+                                <asp:Button ID="deleteButton" runat="server" CausesValidation="false" CommandName="Delete" Text="Delete" OnClick="deleteButton_Click"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

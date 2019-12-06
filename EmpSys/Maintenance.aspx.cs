@@ -38,6 +38,14 @@ namespace EmpSys
             try
             {
                 Search search = new Search();
+                //if (string.IsNullOrEmpty(type))
+                //{
+                //    DataTable dtbl = search.UserSearch(search.SearchQuery(drop, type));
+
+                //}
+                //else
+                //{
+
                 DataTable dtbl = search.UserSearch(search.SearchQuery(drop, type));
                 if (dtbl.Rows.Count > 0)
                 {
@@ -57,6 +65,7 @@ namespace EmpSys
                     dataGrid.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
                     dataGrid.Visible = true;
                 }
+                //}
             }
             catch (Exception ex)
             {
@@ -69,19 +78,34 @@ namespace EmpSys
             Response.Redirect("/Maintenance.aspx");
         }
 
-        protected void dataGrid_RowDeleted(object sender, GridViewDeletedEventArgs e)
-        {
-
-        }
-
         protected void dataGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            GridViewRow row = (GridViewRow)dataGrid.Rows[e.RowIndex];
+            SqlCommand cmd = new SqlCommand("Delete From Employee where userName = '" + row + "'");
+            dataGrid.DataBind();
+            //try
+            //{
+            //    string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
+
+            //    using (SqlConnection con = new SqlConnection(connectionString))
+            //    {
+            //        con.Open();
+            //        using (SqlCommand command = new SqlCommand("DELETE FROM Employee WHERE userName = userName", con))
+            //        {
+            //            dataGrid.Rows[e.RowIndex].FindControl("lblstId");
+            //            command.ExecuteNonQuery();
+            //        }
+            //        con.Close();
+            //    }
+            //}
+            //catch (SystemException ex)
+            //{
+            //    MessageBox.Show(string.Format("An error occurred: {0}", ex.Message));
+            //}
+            //dataGrid.Visible = true;
 
         }
-
-        protected void dataGrid_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
+        
     }
 }
