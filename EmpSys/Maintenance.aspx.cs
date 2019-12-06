@@ -1,6 +1,7 @@
 ﻿using EmpSysLibrary;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -69,35 +70,51 @@ namespace EmpSys
         {
             Response.Redirect("/Maintenance.aspx");
         }
-
+        private void BindGrid()
+        {
+            string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
+            string query = "SELECT * FROM Employee";
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, sqlCon))
+                {
+                    using (DataTable dt = new DataTable())
+                    {
+                        adapter.Fill(dt);
+                        dataGrid.DataSource = dt;
+                        dataGrid.DataBind();
+                    }
+                }
+            }
+        }
         protected void dataGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            GridViewRow row = (GridViewRow)dataGrid.Rows[e.RowIndex];
-            SqlCommand cmd = new SqlCommand("Delete From Employee where userName = '" + row + "'");
-            dataGrid.DataBind();
-            //try
-            //{
-            //    string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
 
-            //    using (SqlConnection con = new SqlConnection(connectionString))
-            //    {
-            //        con.Open();
-            //        using (SqlCommand command = new SqlCommand("DELETE FROM Employee WHERE userName = userName", con))
-            //        {
-            //            dataGrid.Rows[e.RowIndex].FindControl("lblstId");
-            //            command.ExecuteNonQuery();
-            //        }
-            //        con.Close();
-            //    }
-            //}
-            //catch (SystemException ex)
-            //{
-            //    MessageBox.Show(string.Format("An error occurred: {0}", ex.Message));
-            //}
-            //dataGrid.Visible = true;
+            try
+            {
+                string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
+                Int64 employeeId = Convert.ToInt64(dataGrid.DataKeys[e.RowIndex].Values[0]);
+                string query = "DELETE FROM Employee WHERE employeeId=@employeeId";
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(query))
+                    {
+                        command.Parameters.AddWithValue("@employeeId", employeeId);
+                        command.Connection = sqlCon;
+                        sqlCon.Open();
+                        command.ExecuteNonQuery();
+                        sqlCon.Close();
+                    }
+                }
 
+                this.BindGrid();
+            }
+            catch (SystemException ex)
+            {
+                MessageBox.Show(string.Format("An error occurred: {0}", ex.Message));
+            }
         }
-        
-        
+
+
     }
 }

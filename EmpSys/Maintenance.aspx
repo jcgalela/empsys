@@ -194,33 +194,38 @@
         <br />
         <div align="center">
             <nav aria-label="Page navigation example">
-                <asp:GridView ID="dataGrid" runat="server" ItemStyle-HorizontalAlign="Center" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnRowDeleting="dataGrid_RowDeleting">
+                <asp:GridView ID="dataGrid" runat="server" ItemStyle-HorizontalAlign="Center" DataKeyNames="employeeId" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False"  BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnRowDeleting="dataGrid_RowDeleting">
                     <Columns>
+                        <asp:TemplateField HeaderText="Employee ID" SortExpression="Employee ID">
+                            <ItemTemplate>
+                                <asp:Label ID="employeeId" runat="server" Text='<%# Eval("employeeId") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Username" SortExpression="Username">
                             <ItemTemplate>
-                                <asp:Label ID="Label" runat="server" Text='<%# Eval("userName") %>'></asp:Label>
+                                <asp:Label ID="uname" runat="server" Text='<%# Eval("userName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Name" SortExpression="Name">
                             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("firstName") %>'></asp:Label>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("middleName") %>'></asp:Label>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("lastName") %>'></asp:Label>
+                                <asp:Label ID="fName" runat="server" Text='<%# Eval("firstName") %>'></asp:Label>
+                                <asp:Label ID="mName" runat="server" Text='<%# Eval("middleName") %>'></asp:Label>
+                                <asp:Label ID="lName" runat="server" Text='<%# Eval("lastName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="E-Mail Address" SortExpression="E-Mail Address">
                             <ItemTemplate>
-                                <asp:Label ID="Label4" runat="server" Text='<%# Eval("email") %>'></asp:Label>
+                                <asp:Label ID="email" runat="server" Text='<%# Eval("email") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Mobile Number" SortExpression="Mobile Number">
                             <ItemTemplate>
-                                <asp:Label ID="Label5" runat="server" Text='<%# Eval("emergencyContact") %>'></asp:Label>
+                                <asp:Label ID="emergencyContact" runat="server" Text='<%# Eval("emergencyContact") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="User Status" SortExpression="User Status">
                             <ItemTemplate>
-                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("employeeStatus") %>'></asp:Label>
+                                <asp:Label ID="status" runat="server" Text='<%# Eval("employeeStatus") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
