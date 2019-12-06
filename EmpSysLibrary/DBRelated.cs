@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Windows.Forms;
 
 namespace EmpSysLibrary
@@ -56,7 +57,8 @@ namespace EmpSysLibrary
 
                 command.Dispose();
                 cnn.Close();
-                MessageBox.Show("        Inserted Successfully        ");
+                //MessageBox.Show("          Inserted Successfully        ");
+                
 
             }
             catch (Exception ex)
