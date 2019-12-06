@@ -23,7 +23,6 @@ namespace EmpSys
                     this.lblWelcomeMessage.Text = string.Format("Welcome, {0}", Session["UserName"].ToString());
                 }
             }
-
             dataGrid.Visible = false;
         }
 
@@ -34,21 +33,12 @@ namespace EmpSys
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            string drop = searchDropDown.SelectedValue;
             string type = searchTextBox.Text;
-            Search search = new Search();
-            string sql = search.SearchUser(drop, type);
-            string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
-            DataTable dtbl = new DataTable();
-
+            string drop = searchDropDown.SelectedValue;
             try
             {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    SqlDataAdapter sqlDa = new SqlDataAdapter(sql, sqlCon);
-                    sqlDa.Fill(dtbl);
-                }
+                Search search = new Search();
+                DataTable dtbl = search.UserSearch(search.SearchQuery(drop, type));
                 if (dtbl.Rows.Count > 0)
                 {
                     dataGrid.DataSource = dtbl;
@@ -79,5 +69,19 @@ namespace EmpSys
             Response.Redirect("/Maintenance.aspx");
         }
 
+        protected void dataGrid_RowDeleted(object sender, GridViewDeletedEventArgs e)
+        {
+
+        }
+
+        protected void dataGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void dataGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

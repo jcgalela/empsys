@@ -193,7 +193,7 @@
         <br />
         <div align="center">
             <nav aria-label="Page navigation example">
-                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px">
+                <asp:GridView ID="dataGrid" runat="server" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="employeeId" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnSelectedIndexChanged="dataGrid_SelectedIndexChanged" OnRowDeleting="dataGrid_RowDeleting">
                     <Columns>
                         <asp:TemplateField HeaderText="Username" SortExpression="Username">
                             <ItemTemplate>
@@ -230,8 +230,7 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-                <%--<asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:EISConnectionStrings %>" SelectCommand="SELECT [userName], [firstName], [middleName], [lastName], [email], [emergencyContact], [employeeStatus] FROM [Employee]"></asp:SqlDataSource>
-               --%>
+                
             </nav>
         </div>
     </form>
