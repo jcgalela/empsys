@@ -149,10 +149,12 @@
                             </asp:DropDownList></h4>
                         <br />
                         <h4><b>Employee Id:</b>
-                            <asp:TextBox ID="empIdText" runat="server"></asp:TextBox></h4>
+                            <asp:TextBox ID="empIdText" runat="server" required="" MaximumValue="18"  oninvalid="this.setCustomValidity('')"
+                                onvalid="this.setCustomValidity('')"></asp:TextBox></h4> 
+                        </p>
                         <br />
                         <h4><b>SSS Number:</b>
-                            <asp:TextBox ID="sssText" runat="server"></asp:TextBox></h4>
+                            <asp:TextBox ID="sssText" runat="server" required="" ></asp:TextBox></h4>
                         <br />
                         <h4><b>TIN Number:</b>
                             <asp:TextBox ID="tinText" runat="server"></asp:TextBox></h4>
