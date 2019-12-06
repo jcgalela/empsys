@@ -225,8 +225,8 @@
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:Button ID="editButton" runat="server" CausesValidation="false" CommandName="Edit" Text="Edit" OnClick="editButton_Click" />
-                                <asp:Button ID="deleteButton" runat="server" CausesValidation="false" CommandName="Delete" Text="Delete" OnClick="deleteButton_Click"/>
+                                <asp:Button ID="editButton" runat="server" CausesValidation="false" CommandName="Edit" Text="Edit" />
+                                <asp:Button ID="deleteButton" runat="server" CausesValidation="false" CommandName="Delete" Text="Delete"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
