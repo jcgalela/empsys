@@ -67,7 +67,7 @@ namespace EmpSys
                 smtp.Port = 587;
                 smtp.Send(mail);
                 lblMessage.ForeColor = Color.Green;
-                lblMessage.Text = "Password has been sent to your email address.";
+                lblMessage.Text = "Recovery Password link has been sent to your email address.";
             }
 
             else
