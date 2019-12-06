@@ -105,10 +105,11 @@
             color: black;
             text-align: center;
         }
-         .welcome {
+
+        .welcome {
             font-size: 17px;
             font-family: Verdana, Geneva, sans-serif;
-            color: white;  
+            color: white;
             float: right;
         }
     </style>
@@ -186,7 +187,7 @@
                 </div>
 
 
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row content">
 
                         <div class="col-sm-6">
@@ -228,7 +229,7 @@
                         </div>
                     </div>
 
-                    <div class="container-fluid">
+                    <div class="container">
                         <div class="row content">
                             <div class="col-sm-6">
                                 <h2 class="Details">Login Information</h2>
@@ -246,9 +247,12 @@
                             </div>
                         </div>
 
-                        <asp:Button ID="createButton" CssClass="button" runat="server" Text="CREATE" BackColor="#333333" ForeColor="White" Width="163px" OnClick="createButton_Click" Height="46px" />
+
                         <br />
 
+                    </div>
+                    <div style="text-align: center">
+                        <asp:Button ID="createButton" CssClass="button" runat="server" Text="CREATE" BackColor="#333333" ForeColor="White" Width="163px" OnClick="createButton_Click" Height="46px" />
                     </div>
                 </div>
             </div>
