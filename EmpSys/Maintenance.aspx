@@ -194,17 +194,19 @@
         <br />
         <div align="center">
             <nav aria-label="Page navigation example">
-                <asp:GridView ID="dataGrid" runat="server" ItemStyle-HorizontalAlign="Center" DataKeyNames="employeeId" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False"  BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnRowDeleting="dataGrid_RowDeleting">
+                <asp:GridView ID="dataGrid" runat="server" AllowPaging="true" HorizontalAlign="Center" DataKeyNames="employeeId" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False"  BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="1036px" OnRowDeleting="dataGrid_RowDeleting" OnRowUpdating="dataGrid_RowUpdating" OnPageIndexChanging="dataGrid_PageIndexChanging" PageSize="3">
                     <Columns>
                         <asp:TemplateField HeaderText="Employee ID" SortExpression="Employee ID">
                             <ItemTemplate>
                                 <asp:Label ID="employeeId" runat="server" Text='<%# Eval("employeeId") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Username" SortExpression="Username">
                             <ItemTemplate>
                                 <asp:Label ID="uname" runat="server" Text='<%# Eval("userName") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Name" SortExpression="Name">
                             <ItemTemplate>
@@ -212,29 +214,37 @@
                                 <asp:Label ID="mName" runat="server" Text='<%# Eval("middleName") %>'></asp:Label>
                                 <asp:Label ID="lName" runat="server" Text='<%# Eval("lastName") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="E-Mail Address" SortExpression="E-Mail Address">
                             <ItemTemplate>
                                 <asp:Label ID="email" runat="server" Text='<%# Eval("email") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Mobile Number" SortExpression="Mobile Number">
                             <ItemTemplate>
                                 <asp:Label ID="emergencyContact" runat="server" Text='<%# Eval("emergencyContact") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="User Status" SortExpression="User Status">
                             <ItemTemplate>
                                 <asp:Label ID="status" runat="server" Text='<%# Eval("employeeStatus") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:Button ID="editButton" runat="server" CausesValidation="false" CommandName="Edit" Text="Edit" />
+                                <asp:Button ID="updateButton" runat="server" CausesValidation="false" CommandName="Update" Text="Update" />
                                 <asp:Button ID="deleteButton" runat="server" CausesValidation="false" CommandName="Delete" Text="Delete"/>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                     </Columns>
+                    
+                    <PagerSettings FirstPageText="First" LastPageText="Last" Mode="NextPrevious" NextPageText="Next" PreviousPageText="Previous" />
+                        
                 </asp:GridView>
                 
             </nav>

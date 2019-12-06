@@ -70,6 +70,7 @@ namespace EmpSys
         {
             Response.Redirect("/Maintenance.aspx");
         }
+
         private void BindGrid()
         {
             string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
@@ -87,9 +88,9 @@ namespace EmpSys
                 }
             }
         }
+
         protected void dataGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
             try
             {
                 string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
@@ -106,15 +107,52 @@ namespace EmpSys
                         sqlCon.Close();
                     }
                 }
-
                 this.BindGrid();
             }
             catch (SystemException ex)
             {
                 MessageBox.Show(string.Format("An error occurred: {0}", ex.Message));
             }
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Deleted Successfully')", true);
         }
 
+        protected void dataGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            //try
+            //{
+            //    string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
+            //    GridViewRow row = dataGrid.Rows[e.RowIndex];
+            //    Int64 employeeId = Convert.ToInt64(dataGrid.DataKeys[e.RowIndex].Values[0]);
+            //    string name = (row.FindControl("Name") as System.Web.UI.WebControls.TextBox).Text;
+            //    string contact = (row.FindControl("Mobile Number") as System.Web.UI.WebControls.TextBox).Text;
+            //    string email = (row.FindControl("E-Mail Address") as System.Web.UI.WebControls.TextBox).Text;
+            //    string query = "UPDATE Employee SET Name=@lastName, emergencyContact=@emergencyContact, email=@email WHERE employeeId=@employeeId";
+            //    using (SqlConnection con = new SqlConnection(connectionString))
+            //    {
+            //        using (SqlCommand cmd = new SqlCommand(query))
+            //        {
+            //            cmd.Parameters.AddWithValue("@lastName", name);
+            //            cmd.Parameters.AddWithValue("@emergencyContact", contact);
+            //            cmd.Parameters.AddWithValue("@email", email);
+            //            cmd.Connection = con;
+            //            con.Open();
+            //            cmd.ExecuteNonQuery();
+            //            con.Close();
+            //        }
+            //    }
+            //    dataGrid.EditIndex = -1;
+            //    this.BindGrid();
+            //} catch (Exception ex)
+            //{
+            //    MessageBox.Show("An error has occured.\n" + ex.Message);
+            //}
+        }
 
+        protected void dataGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dataGrid.PageIndex = e.NewPageIndex;
+            this.BindGrid();
+            dataGrid.Visible = true;
+        }
     }
 }
