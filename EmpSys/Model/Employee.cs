@@ -14,24 +14,24 @@ namespace EmpSys.Model
     
     public partial class Employee
     {
-        public decimal employeeId { get; set; }
+        public string employeeId { get; set; }
         public string firstName { get; set; }
         public string middleName { get; set; }
         public string lastName { get; set; }
-        public System.DateTime birthday { get; set; }
+        public string birthday { get; set; }
         public string emergencyName { get; set; }
         public string emergencyAddress { get; set; }
         public string emergencyContact { get; set; }
         public string employeeStatus { get; set; }
-        public decimal sssnum { get; set; }
-        public decimal tinnum { get; set; }
-        public System.DateTime dateEmployed { get; set; }
-        public System.DateTime dateFrom { get; set; }
-        public System.DateTime dateTo { get; set; }
-        public byte[] signature { get; set; }
+        public string sssnum { get; set; }
+        public string tinnum { get; set; }
+        public string dateEmployed { get; set; }
+        public string dateFrom { get; set; }
+        public string dateTo { get; set; }
+        public string signature { get; set; }
         public string userName { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public byte[] image { get; set; }
+        public string image { get; set; }
     }
 }

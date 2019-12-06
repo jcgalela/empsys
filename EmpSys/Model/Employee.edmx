@@ -9,25 +9,25 @@
           <Key>
             <PropertyRef Name="employeeId" />
           </Key>
-          <Property Name="employeeId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="employeeId" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="middleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="middleName" Type="varchar" MaxLength="50" />
           <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="birthday" Type="datetime" Nullable="false" />
+          <Property Name="birthday" Type="varchar" MaxLength="50" />
           <Property Name="emergencyName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="emergencyAddress" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="emergencyContact" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="employeeStatus" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="sssnum" Type="numeric" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="tinnum" Type="numeric" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="dateEmployed" Type="datetime" Nullable="false" />
-          <Property Name="dateFrom" Type="datetime" Nullable="false" />
-          <Property Name="dateTo" Type="datetime" Nullable="false" />
-          <Property Name="signature" Type="image" />
-          <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="image" Type="image" />
+          <Property Name="employeeStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sssnum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tinnum" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateEmployed" Type="varchar" MaxLength="50" />
+          <Property Name="dateFrom" Type="varchar" MaxLength="50" />
+          <Property Name="dateTo" Type="varchar" MaxLength="50" />
+          <Property Name="signature" Type="varchar" MaxLength="50" />
+          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="EISModelStoreContainer">
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
@@ -41,25 +41,25 @@
           <Key>
             <PropertyRef Name="employeeId" />
           </Key>
-          <Property Name="employeeId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="employeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="birthday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="emergencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="emergencyAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="emergencyContact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="employeeStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="sssnum" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="tinnum" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="dateEmployed" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="dateFrom" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="dateTo" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="signature" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="employeeStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sssnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tinnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateEmployed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dateFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dateTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="signature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="EISEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employees" EntityType="Self.Employee" />

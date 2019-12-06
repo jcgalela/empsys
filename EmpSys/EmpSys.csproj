@@ -135,11 +135,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Maintenance.aspx" />
     <EntityDeploy Include="Model\Employee.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Employee.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Maintenance.aspx" />
     <Content Include="Model\Employee.edmx.diagram">
       <DependentUpon>Employee.edmx</DependentUpon>
     </Content>
@@ -148,8 +148,8 @@
     <Content Include="Login.aspx" />
     <Content Include="Model\Employee.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Employee.Context.cs</LastGenOutput>
       <DependentUpon>Employee.edmx</DependentUpon>
+      <LastGenOutput>Employee.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\Employee.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
