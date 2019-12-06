@@ -36,7 +36,6 @@ namespace EmpSys
             string dateEmp = DateTime.ParseExact(dateEmployedText.Text, "MM/dd/yyyy", provider).ToShortDateString();
             string from = DateTime.ParseExact(fromText.Text, "MM/dd/yyyy", provider).ToShortDateString();
             string to = DateTime.ParseExact(toText.Text, "MM/dd/yyyy", provider).ToShortDateString();
-            ///*Image signature = ImageButton2.Visible*/;
             string fName = firstNameText.Text;
             string MName = middleNameText.Text;
             string lName = lastNameText.Text;
@@ -120,9 +119,6 @@ namespace EmpSys
             dateEmployedCalendar.Visible = false;
             dateEmployedButton.Visible = true;
         }
-
-      
     }
-
 }
     

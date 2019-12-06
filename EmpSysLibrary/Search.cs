@@ -10,7 +10,6 @@ namespace EmpSysLibrary
 {
     public class Search
     {
-
         public string SearchQuery(string drop, string type)
         {
             string query = string.Empty;
@@ -18,7 +17,8 @@ namespace EmpSysLibrary
             if (drop == "(Default)")
             {
                 query = "SELECT * FROM Employee";
-            } else if (drop == "Username")
+            }
+            else if (drop == "Username")
             {
                 query = "SELECT * FROM Employee WHERE userName = '" + type + "'";
             }
@@ -34,7 +34,7 @@ namespace EmpSysLibrary
             {
                 query = "SELECT* FROM Employee WHERE email = '" + type + "'";
             }
-            
+
             return query;
         }
 
@@ -48,9 +48,6 @@ namespace EmpSysLibrary
             sqlDa.Fill(dtbl);
             return dtbl;
         }
-
-            
-        
-}
+    }
 }
 

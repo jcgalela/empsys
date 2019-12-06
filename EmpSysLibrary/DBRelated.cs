@@ -56,11 +56,11 @@ namespace EmpSysLibrary
 
                 command.Dispose();
                 cnn.Close();
-                MessageBox.Show("Inserted SUccessfully");
+                MessageBox.Show("        Inserted Successfully        ");
                 
             } catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("        An error occured.         " + "\n" + ex.Message);
             }
         }
     }

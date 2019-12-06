@@ -38,14 +38,6 @@ namespace EmpSys
             try
             {
                 Search search = new Search();
-                //if (string.IsNullOrEmpty(type))
-                //{
-                //    DataTable dtbl = search.UserSearch(search.SearchQuery(drop, type));
-
-                //}
-                //else
-                //{
-
                 DataTable dtbl = search.UserSearch(search.SearchQuery(drop, type));
                 if (dtbl.Rows.Count > 0)
                 {
