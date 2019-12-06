@@ -11,7 +11,7 @@ namespace EmpSysLibrary
 {
     public class DBRelated
     {
-        public void DbInsert(string id,  string fName, string MName, string lName, string bdate, string name, string address, Int64 contact, string drop,
+        public void DbInsert(string id, string fName, string MName, string lName, string bdate, string name, string address, Int64 contact, string drop,
             Int64 sss, Int64 tin, string dateEmp, string from, string to, byte signature, string Uname, string email, string password, byte image)
         {
             try
@@ -47,8 +47,8 @@ namespace EmpSysLibrary
                     "email," +
                     "password," +
                     "image) " +
-                    "values ( '" + id + "','" + fName + "','" + MName + "','" + lName + "','" +  bdate + "','" + name + 
-                    "','" + address + "','" + contact + "','" + drop + "','" + sss + "','" + tin + "','" + dateEmp + "','" + from + "','" + to 
+                    "values ( '" + id + "','" + fName + "','" + MName + "','" + lName + "','" + bdate + "','" + name +
+                    "','" + address + "','" + contact + "','" + drop + "','" + sss + "','" + tin + "','" + dateEmp + "','" + from + "','" + to
                     + "','" + signature + "','" + Uname + "','" + email + "','" + password + "','" + image + "')";
                 command = new SqlCommand(sql, cnn);
                 adapter.InsertCommand = new SqlCommand(sql, cnn);
@@ -57,11 +57,23 @@ namespace EmpSysLibrary
                 command.Dispose();
                 cnn.Close();
                 MessageBox.Show("        Inserted Successfully        ");
-                
-            } catch (Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("        An error occured.         " + "\n" + ex.Message);
             }
+        }
+        public void checkIfNoInput(string dateEmp, string from, string to, string bdate)
+        {
+            if ((string.IsNullOrEmpty(dateEmp)) || (string.IsNullOrEmpty(from)) ||
+                (string.IsNullOrEmpty(to)) || (string.IsNullOrEmpty(bdate)))
+            {
+                MessageBox.Show("Please fill up the form completely");
+                //return true;
+            }
+            //else
+               // return false;
         }
     }
 }
