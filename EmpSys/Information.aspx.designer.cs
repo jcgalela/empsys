@@ -87,6 +87,15 @@ namespace EmpSys
         protected global::System.Web.UI.WebControls.TextBox sssText;
 
         /// <summary>
+        /// sssValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator sssValidator;
+
+        /// <summary>
         /// tinText control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace EmpSys
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tinText;
+
+        /// <summary>
+        /// tinValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator tinValidator;
 
         /// <summary>
         /// dateEmployedText control.
@@ -231,6 +249,15 @@ namespace EmpSys
         protected global::System.Web.UI.WebControls.TextBox firstNameText;
 
         /// <summary>
+        /// fnameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator fnameValidator;
+
+        /// <summary>
         /// middleNameText control.
         /// </summary>
         /// <remarks>
@@ -240,6 +267,15 @@ namespace EmpSys
         protected global::System.Web.UI.WebControls.TextBox middleNameText;
 
         /// <summary>
+        /// midnameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator midnameValidator;
+
+        /// <summary>
         /// lastNameText control.
         /// </summary>
         /// <remarks>
@@ -247,6 +283,15 @@ namespace EmpSys
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastNameText;
+
+        /// <summary>
+        /// lnameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator lnameValidator;
 
         /// <summary>
         /// birthdayText control.
@@ -285,6 +330,15 @@ namespace EmpSys
         protected global::System.Web.UI.WebControls.TextBox emergencyName;
 
         /// <summary>
+        /// emnameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator emnameValidator;
+
+        /// <summary>
         /// emergencyAddress control.
         /// </summary>
         /// <remarks>
@@ -301,6 +355,15 @@ namespace EmpSys
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox emergencyContact;
+
+        /// <summary>
+        /// emcontactValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator emcontactValidator1;
 
         /// <summary>
         /// userNameText control.

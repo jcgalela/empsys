@@ -155,21 +155,21 @@
                         </p>
                         <br />
                         <h4><b>SSS Number:</b>
-                            <asp:TextBox ID="sssText" runat="server"></asp:TextBox></h4>
+                            <asp:TextBox ID="sssText" placeholder="XX-XXXXXXX-X"  runat="server" MaxLength="10"></asp:TextBox></h4>
+                        <asp:RegularExpressionValidator ID="sssValidator" runat="server" ControlToValidate="sssText" ForeColor="Red" ErrorMessage="SSS number is wrong." ValidationExpression="^\d{2}\d{7}\d{1}$"></asp:RegularExpressionValidator>  
                         <br />
                         <h4><b>TIN Number:</b>
-                            <asp:TextBox ID="tinText" runat="server"></asp:TextBox></h4>
+                            <asp:TextBox ID="tinText" placeholder="XXX-XXX-XXX" runat="server" MaxLength="9" ></asp:TextBox></h4>
+                        <asp:RegularExpressionValidator ID="tinValidator" runat="server" ControlToValidate="tinText" ForeColor="Red" ErrorMessage="TIN number is wrong." ValidationExpression="^\d{3}\d{3}\d{3}$"></asp:RegularExpressionValidator>  
                         <br />
-                        <h4><b>Date Employed:</b><asp:TextBox ID="dateEmployedText" runat="server" ReadOnly="True" required="" oninvalid="this.setCustomValidity('')"
-                            onvalid="this.setCustomValidity('')"></asp:TextBox>
+                        <h4><b>Date Employed:</b><asp:TextBox ID="dateEmployedText" runat="server" ReadOnly="True"></asp:TextBox>
                             <asp:ImageButton ID="dateEmployedButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="dateEmployedButton_Click" />
                             <asp:Calendar ID="dateEmployedCalendar" runat="server" Visible="False" OnSelectionChanged="dateEmployedCalendar_SelectionChanged"></asp:Calendar>
                         </h4>
                         <br />
 
                         <h4><b>Effective Date:</b></h4>
-                        <h4><b>From:</b><asp:TextBox ID="fromText" runat="server" ReadOnly="True" required="" oninvalid="this.setCustomValidity('')"
-                            onvalid="this.setCustomValidity('')"></asp:TextBox>
+                        <h4><b>From:</b><asp:TextBox ID="fromText" runat="server" ReadOnly="True"></asp:TextBox>
                             <asp:ImageButton ID="fromButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="fromButton_Click" />
                             <asp:Calendar ID="fromCalendar" runat="server" Visible="False" OnSelectionChanged="fromCalendar_SelectionChanged"></asp:Calendar>
                         </h4>
@@ -179,10 +179,10 @@
                             <asp:Calendar ID="toCalendar" runat="server" Visible="False" OnSelectionChanged="toCalendar_SelectionChanged"></asp:Calendar>
                         </h4>
                         <br />
-                        <h4><b>Signature:</b><br/>
-                            <br/>
-                        <asp:Image ID="signaImage" runat="server" Height="50px" ImageUrl="~/sig.PNG" />
-                        <asp:FileUpload ID="signaUpload" runat="server" /></h4>
+                        <h4><b>Signature:</b><br />
+                            <br />
+                            <asp:Image ID="signaImage" runat="server" Height="50px" ImageUrl="~/sig.PNG" />
+                            <asp:FileUpload ID="signaUpload" runat="server" /></h4>
                     </ul>
                     <br />
 
@@ -216,15 +216,19 @@
                             </ul>
                             <h4><b>First Name:</b><asp:TextBox ID="firstNameText" runat="server" required="" oninvalid="this.setCustomValidity('')"
                                 onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                            <asp:RegularExpressionValidator ID="fnameValidator" runat="server" ControlToValidate="firstNameText" ForeColor="Red" ErrorMessage="Name must not have a number or Special Characters." ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
                             <br>
                             <h4><b>Middle Name:</b><asp:TextBox ID="middleNameText" runat="server" required="" oninvalid="this.setCustomValidity('')"
                                 onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                            <asp:RegularExpressionValidator ID="midnameValidator" runat="server" ControlToValidate="middleNameText" ForeColor="Red" ErrorMessage="Name must not have a number or Special Characters." ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
+                          
                             <br>
                             <h4><b>Last Name:</b><asp:TextBox ID="lastNameText" runat="server" required="" oninvalid="this.setCustomValidity('')"
                                 onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                            <asp:RegularExpressionValidator ID="lnameValidator" runat="server" ControlToValidate="lastNameText" ForeColor="Red" ErrorMessage="Name must not have a number or Special Characters." ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
+                          
                             <br>
-                            <h4><b>Date of Birth:</b><asp:TextBox ID="birthdayText" runat="server" ReadOnly="True" required="" oninvalid="this.setCustomValidity('')"
-                                onvalid="this.setCustomValidity('')"></asp:TextBox>
+                            <h4><b>Date of Birth:</b><asp:TextBox ID="birthdayText" runat="server" ReadOnly="True"></asp:TextBox>
                                 <asp:ImageButton ID="birthdayButton" runat="server" Height="25px" ImageUrl="~/calendar-512.png" OnClick="birthdayButton_Click" />
                                 <asp:Calendar ID="birthdayCalendar" runat="server" Visible="False" OnSelectionChanged="birthdayCalendar_SelectionChanged"></asp:Calendar>
                                 <br />
@@ -233,12 +237,15 @@
                                 <h4><b>In case of emergency, please notify,</b></h4>
                                 <h4><b>Name:</b><asp:TextBox ID="emergencyName" runat="server" required="" oninvalid="this.setCustomValidity('')"
                                     onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                <asp:RegularExpressionValidator ID="emnameValidator" runat="server" ControlToValidate="emergencyName" ForeColor="Red" ErrorMessage="Name must not have a number or Special Characters." ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
+                          
                                 <br />
                                 <h4><b>Address:</b><asp:TextBox ID="emergencyAddress" runat="server" required="" oninvalid="this.setCustomValidity('')"
                                     onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                                 <br>
-                                <h4><b>Contact No:</b><asp:TextBox ID="emergencyContact" runat="server" required="" oninvalid="this.setCustomValidity('')"
-                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                <h4><b>Contact No:</b><asp:TextBox ID="emergencyContact" placeholder="123-4567890" runat="server" required="" oninvalid="this.setCustomValidity('')"
+                                    onvalid="this.setCustomValidity('')" MaxLength="11"></asp:TextBox></h4>
+                                <asp:RegularExpressionValidator ID="emcontactValidator1" runat="server" ControlToValidate="emergencyContact" ForeColor="Red" ErrorMessage="Contact number is wrong." ValidationExpression="^([0-9]{11})$"></asp:RegularExpressionValidator>  
 
                                 <br />
                         </div>
@@ -257,9 +264,9 @@
                                 <h4><b>Confirm Email:</b><asp:TextBox ID="confirmEmailText" runat="server" required="" oninvalid="this.setCustomValidity('')"
                                     onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
                                 <h4><b>Password:</b><asp:TextBox ID="passwordText" runat="server" required="" oninvalid="this.setCustomValidity('')"
-                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                    onvalid="this.setCustomValidity('')" TextMode="Password"></asp:TextBox></h4>
                                 <h4><b>Confirm Password:</b><asp:TextBox ID="confirmPassText" runat="server" required="" oninvalid="this.setCustomValidity('')"
-                                    onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                    onvalid="this.setCustomValidity('')" TextMode="Password"></asp:TextBox></h4>
 
 
                                 <br />

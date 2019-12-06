@@ -25,6 +25,7 @@ namespace EmpSys
                     this.lblWelcomeMessage.Text = string.Format("Welcome, {0}", Session["UserName"].ToString());
                 }
             }
+            
         }
 
         protected void createButton_Click(object sender, EventArgs e)
@@ -50,20 +51,28 @@ namespace EmpSys
                 string Uname = userNameText.Text;
                 string email = emailText.Text;
                 string password = passwordText.Text;
-
+                string confirm = confirmPassText.Text;
+                if(password != confirm)
+                {
+                    MessageBox.Show("Passwords not match.");
+                }
                 DBRelated db = new DBRelated();
                 db.DbInsert(id, fName, MName, lName, bdate, name, address, contact, drop, sss,
                     tin, dateEmp, from, to, 0, Uname, email, password, 0);
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred." + ex.Message);
+                Response.Redirect("/Information.aspx");
             }
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+            Response.Redirect("/Maintenance.aspx");
         }
         protected void fromButton_Click(object sender, ImageClickEventArgs e)
         {
             if (fromCalendar.Visible == false)
-            {
+            { 
                 fromCalendar.Visible = true;
             }
             else if (fromCalendar.Visible == true)

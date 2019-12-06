@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI;
 using System.Windows.Forms;
 
 namespace EmpSysLibrary
@@ -57,25 +51,11 @@ namespace EmpSysLibrary
 
                 command.Dispose();
                 cnn.Close();
-                //MessageBox.Show("          Inserted Successfully        ");
-                
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("        An error occured.         " + "\n" + ex.Message);
             }
-        }
-        public void checkIfNoInput(string dateEmp, string from, string to, string bdate)
-        {
-            if ((string.IsNullOrEmpty(dateEmp)) || (string.IsNullOrEmpty(from)) ||
-                (string.IsNullOrEmpty(to)) || (string.IsNullOrEmpty(bdate)))
-            {
-                MessageBox.Show("Please fill up the form completely");
-                //return true;
-            }
-            //else
-               // return false;
         }
     }
 }
