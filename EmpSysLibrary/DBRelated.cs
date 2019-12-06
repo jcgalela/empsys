@@ -11,8 +11,8 @@ namespace EmpSysLibrary
 {
     public class DBRelated
     {
-        public void DbInsert(string id,  string fName, string MName, string lName, DateTime bdate, string name, string address, Int64 contact, string drop,
-            Int64 sss, Int64 tin, DateTime dateEmp, DateTime from, DateTime to, byte signature, string Uname, string email, string password, byte image)
+        public void DbInsert(string id,  string fName, string MName, string lName, string bdate, string name, string address, Int64 contact, string drop,
+            Int64 sss, Int64 tin, string dateEmp, string from, string to, byte signature, string Uname, string email, string password, byte image)
         {
             try
             {
