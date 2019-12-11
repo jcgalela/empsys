@@ -15,7 +15,7 @@ namespace EmpSys
     public partial class Maintenance : System.Web.UI.Page
     {
 
-        protected void Page_Load(object sender, EventArgs e)
+        public void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
@@ -27,12 +27,12 @@ namespace EmpSys
             dataGrid.Visible = false;
         }
 
-        protected void addUserButton_Click(object sender, EventArgs e)
+        public void addUserButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Information.aspx");
         }
 
-        protected void searchButton_Click(object sender, EventArgs e)
+        public void searchButton_Click(object sender, EventArgs e)
         {
             string type = searchTextBox.Text;
             string drop = searchDropDown.SelectedValue;
@@ -66,12 +66,13 @@ namespace EmpSys
             }
         }
 
-        protected void clearButton_Click(object sender, EventArgs e)
+        public void clearButton_Click(object sender, EventArgs e)
         {
+            Session.Clear();
             Response.Redirect("/Maintenance.aspx");
         }
 
-        private void BindGrid()
+        public void BindGrid()
         {
             string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
             string query = "SELECT * FROM Employee";
@@ -89,7 +90,7 @@ namespace EmpSys
             }
         }
 
-        protected void dataGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        public void dataGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try
             {
@@ -116,43 +117,31 @@ namespace EmpSys
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Deleted Successfully')", true);
         }
 
-        protected void dataGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void dataGrid_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
-            //    GridViewRow row = dataGrid.Rows[e.RowIndex];
-            //    Int64 employeeId = Convert.ToInt64(dataGrid.DataKeys[e.RowIndex].Values[0]);
-            //    string name = (row.FindControl("Name") as System.Web.UI.WebControls.TextBox).Text;
-            //    string contact = (row.FindControl("Mobile Number") as System.Web.UI.WebControls.TextBox).Text;
-            //    string email = (row.FindControl("E-Mail Address") as System.Web.UI.WebControls.TextBox).Text;
-            //    string query = "UPDATE Employee SET Name=@lastName, emergencyContact=@emergencyContact, email=@email WHERE employeeId=@employeeId";
-            //    using (SqlConnection con = new SqlConnection(connectionString))
-            //    {
-            //        using (SqlCommand cmd = new SqlCommand(query))
-            //        {
-            //            cmd.Parameters.AddWithValue("@lastName", name);
-            //            cmd.Parameters.AddWithValue("@emergencyContact", contact);
-            //            cmd.Parameters.AddWithValue("@email", email);
-            //            cmd.Connection = con;
-            //            con.Open();
-            //            cmd.ExecuteNonQuery();
-            //            con.Close();
-            //        }
-            //    }
-            //    dataGrid.EditIndex = -1;
-            //    this.BindGrid();
-            //} catch (Exception ex)
-            //{
-            //    MessageBox.Show("An error has occured.\n" + ex.Message);
-            //}
+            //Session["selected"] = dataGrid.SelectedRow;
         }
 
-        protected void dataGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        public void dataGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            GridViewRow row = dataGrid.Rows[e.RowIndex];
+            Int64 employeeId = Convert.ToInt64(dataGrid.DataKeys[e.RowIndex].Values[0]);
+            //Session["employeeId"] = employeeId;
+            //Response.Redirect("/Edit.aspx");
+            Response.Redirect("Edit.aspx?employeeId=" + employeeId);
+        }
+
+        public void dataGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             dataGrid.PageIndex = e.NewPageIndex;
             this.BindGrid();
             dataGrid.Visible = true;
+        }
+
+        protected void dataGrid_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            var employeeId = Convert.ToInt64(dataGrid.DataKeys[e.NewSelectedIndex].Value);
+            
         }
     }
 }

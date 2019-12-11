@@ -12,9 +12,8 @@ namespace EmpSysLibrary
             try
             {
                 #region connect
-                string connectionString;
                 SqlConnection cnn;
-                connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
+                string connectionString = @"Data Source = GXD8HY1; Initial Catalog = EIS; User ID = sa; Password=Password2";
 
                 cnn = new SqlConnection(connectionString);
                 cnn.Open();
