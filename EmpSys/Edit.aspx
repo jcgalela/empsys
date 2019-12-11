@@ -136,7 +136,7 @@
                         <br />
                         <h4><b>Employee Id:</b>
                             <asp:TextBox ID="empIdText" runat="server" required="" oninvalid="this.setCustomValidity('')"
-                                onvalid="this.setCustomValidity('')"></asp:TextBox></h4>
+                                onvalid="this.setCustomValidity('')" ReadOnly="True"></asp:TextBox></h4>
                         </p>
                         <br />
                         <h4><b>SSS Number:</b>
